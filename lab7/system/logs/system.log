@@ -1,0 +1,7 @@
+INFO: Server started
+DEBUG: Loading modules
+ERROR: Database connection failed
+INFO: Retrying connection
+ERROR: Timeout occurred
+INFO: Server running
+
