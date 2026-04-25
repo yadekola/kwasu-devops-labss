@@ -1,0 +1,73 @@
+tcpdump:x:72:72::/:/sbin/nologin
+systemd-oom:x:985:985:systemd Userspace OOM Killer:/:/usr/sbin/nologin
+systemd-resolve:x:984:984:systemd Resolver:/:/usr/sbin/nologin
+vagrant:x:1000:1000::/home/vagrant:/bin/bash
+vboxadd:x:983:1::/var/run/vboxadd:/bin/false
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+vagrant:x:1000:1000::/home/vagrant:/bin/bash
+tss:x:59:59:Account used for TPM access:/dev/null:/sbin/nologin
+sssd:x:993:989:User for sssd:/:/sbin/nologin
+setroubleshoot:x:992:988::/var/lib/setroubleshoot:/sbin/nologin
+sshd:x:74:74:Privilege-separated SSH:/usr/share/empty.sshd:/sbin/nologin
+chrony:x:991:987::/var/lib/chrony:/sbin/nologin
+tcpdump:x:72:72::/:/sbin/nologin
+systemd-oom:x:985:985:systemd Userspace OOM Killer:/:/usr/sbin/nologin
+systemd-resolve:x:984:984:systemd Resolver:/:/usr/sbin/nologin
+vagrant:x:1000:1000::/home/vagrant:/bin/bash
+vboxadd:x:983:1::/var/run/vboxadd:/bin/false
+1
+root
+bin
+daemon
+adm
+lp
+sync
+shutdown
+halt
+mail
+operator
+games
+ftp
+nobody
+unbound
+systemd-coredump
+dbus
+polkitd
+libstoragemgmt
+cockpit-ws
+cockpit-wsinstance
+tss
+sssd
+setroubleshoot
+sshd
+chrony
+tcpdump
+systemd-oom
+systemd-resolve
+vagrant
+vboxadd
+30
+/usr/share/man/man3/ferror.3.gz
+/usr/share/man/man3/ferror_unlocked.3.gz
+/usr/share/man/man3/gai_error.3.gz
+/usr/share/man/man3/gai_strerror.3.gz
+/usr/share/man/man3/herror.3.gz
+/usr/share/man/man3/hstrerror.3.gz
+/usr/share/man/man3/perror.3.gz
+/usr/share/man/man3/regerror.3.gz
+/usr/share/man/man3/strerror.3.gz
+/usr/share/man/man3/strerror_l.3.gz
+/usr/share/man/man3/strerror_r.3.gz
+/usr/share/man/man3/strerrordesc_np.3.gz
+/usr/share/man/man3/strerrorname_np.3.gz
+/usr/share/man/man3p/aio_error.3p.gz
+/usr/share/man/man3p/dlerror.3p.gz
+/usr/share/man/man3p/ferror.3p.gz
+/usr/share/man/man3p/gai_strerror.3p.gz
+/usr/share/man/man3p/perror.3p.gz
+/usr/share/man/man3p/strerror.3p.gz
+/usr/share/man/man7/math_error.7.gz
