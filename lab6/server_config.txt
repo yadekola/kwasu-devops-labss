@@ -1,0 +1,8 @@
+#!/bin/bash
+
+
+port=3000
+env=production
+debug=false
+timeout=60
+cache=true
