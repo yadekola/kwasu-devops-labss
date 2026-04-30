@@ -1,0 +1,9 @@
+Write your software management report including:
+- CentOS uses RPM package management
+- Ubuntu uses Debian package management
+- Commands learned:
+cat /etc/os-release
+rpm -qa
+telnet
+arch
+uname -m

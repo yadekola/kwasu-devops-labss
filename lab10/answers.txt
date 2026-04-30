@@ -1,0 +1,15 @@
+#MISSION 3
+CentOS Stream
+
+
+#MISSION 4
+
+The reason why we used head is to show the 10 lines of the package installed to the computer.
+
+#MISSION 5
+ 
+The architecture of my machine is x86_64
+
+#MISSION 6
+
+Telnet is a command line to alway to troubleshooting errors in the server or website. 
