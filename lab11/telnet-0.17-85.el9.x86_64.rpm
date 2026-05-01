@@ -1,0 +1,4 @@
+--2026-05-01 02:52:44--  https://rpmfind.net/linux/centos-stream/9-stream/AppStream/x86_64/os/Packages/telnet-0.17-85.el9.x86_64.rpm
+Resolving rpmfind.net (rpmfind.net)... 195.220.108.108
+Connecting to rpmfind.net (rpmfind.net)|195.220.108.108|:443... connected.
+Unable to establish SSL connection.
