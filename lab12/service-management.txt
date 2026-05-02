@@ -1,0 +1,17 @@
+KWASU Service Management Report
+This lab is about managing Linux services using systemctl.
+Services learned:
+- httpd
+- sshd
+Commands learned:
+- systemctl status httpd
+- systemctl start httpd
+- systemctl restart httpd
+- systemctl enable httpd
+- systemctl is-active httpd
+- systemctl is-enabled httpd
+- systemctl status sshd
+- sudo reboot
+Use case:
+KWASU website needs httpd to run so students can access the website.
+
