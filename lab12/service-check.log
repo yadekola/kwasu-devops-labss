@@ -1,0 +1,2682 @@
+Starting KWASU service check...
+NAME="CentOS Stream"
+VERSION="9"
+ID="centos"
+ID_LIKE="rhel fedora"
+VERSION_ID="9"
+PLATFORM_ID="platform:el9"
+PRETTY_NAME="CentOS Stream 9"
+ANSI_COLOR="0;31"
+LOGO="fedora-logo-icon"
+CPE_NAME="cpe:/o:centos:centos:9"
+HOME_URL="https://centos.org/"
+BUG_REPORT_URL="https://issues.redhat.com/"
+REDHAT_SUPPORT_PRODUCT="Red Hat Enterprise Linux 9"
+REDHAT_SUPPORT_PRODUCT_VERSION="CentOS Stream"
+● httpd.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; preset: disabled)
+     Active: active (running) since Sat 2026-05-02 20:27:39 UTC; 2min 30s ago
+       Docs: man:httpd.service(8)
+   Main PID: 17696 (httpd)
+     Status: "Total requests: 0; Idle/Busy workers 100/0;Requests/sec: 0; Bytes served/sec:   0 B/sec"
+      Tasks: 177 (limit: 10668)
+     Memory: 13.5M (peak: 13.8M)
+        CPU: 230ms
+     CGroup: /system.slice/httpd.service
+             ├─17696 /usr/sbin/httpd -DFOREGROUND
+             ├─17697 /usr/sbin/httpd -DFOREGROUND
+             ├─17698 /usr/sbin/httpd -DFOREGROUND
+             ├─17699 /usr/sbin/httpd -DFOREGROUND
+             └─17700 /usr/sbin/httpd -DFOREGROUND
+active
+enabled
+● sshd.service - OpenSSH server daemon
+     Loaded: loaded (/usr/lib/systemd/system/sshd.service; enabled; preset: enabled)
+     Active: active (running) since Sat 2026-05-02 19:58:48 UTC; 31min ago
+       Docs: man:sshd(8)
+             man:sshd_config(5)
+   Main PID: 649 (sshd)
+      Tasks: 1 (limit: 10668)
+     Memory: 9.3M (peak: 14.4M)
+        CPU: 1.112s
+     CGroup: /system.slice/sshd.service
+             └─649 "sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups"
+# /usr/lib/systemd/system/httpd.service
+# See httpd.service(8) for more information on using the httpd service.
+
+# Modifying this file in-place is not recommended, because changes
+# will be overwritten during package upgrades.  To customize the
+# behaviour, run "systemctl edit httpd" to create an override unit.
+
+# For example, to pass additional options (such as -D definitions) to
+# the httpd binary at startup, create an override unit (as is done by
+# systemctl edit) and enter the following:
+
+#	[Service]
+#	Environment=OPTIONS=-DMY_DEFINE
+
+[Unit]
+Description=The Apache HTTP Server
+Wants=httpd-init.service
+After=network.target remote-fs.target nss-lookup.target httpd-init.service
+Documentation=man:httpd.service(8)
+
+[Service]
+Type=notify
+Environment=LANG=C
+
+ExecStart=/usr/sbin/httpd $OPTIONS -DFOREGROUND
+ExecReload=/usr/sbin/httpd $OPTIONS -k graceful
+# Send SIGWINCH for graceful stop
+KillSignal=SIGWINCH
+KillMode=mixed
+PrivateTmp=true
+OOMPolicy=continue
+
+[Install]
+WantedBy=multi-user.target
+Done
+Starting KWASU service check...
+NAME="CentOS Stream"
+VERSION="9"
+ID="centos"
+ID_LIKE="rhel fedora"
+VERSION_ID="9"
+PLATFORM_ID="platform:el9"
+PRETTY_NAME="CentOS Stream 9"
+ANSI_COLOR="0;31"
+LOGO="fedora-logo-icon"
+CPE_NAME="cpe:/o:centos:centos:9"
+HOME_URL="https://centos.org/"
+BUG_REPORT_URL="https://issues.redhat.com/"
+REDHAT_SUPPORT_PRODUCT="Red Hat Enterprise Linux 9"
+REDHAT_SUPPORT_PRODUCT_VERSION="CentOS Stream"
+● httpd.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; preset: disabled)
+     Active: active (running) since Sat 2026-05-02 20:30:11 UTC; 546ms ago
+       Docs: man:httpd.service(8)
+   Main PID: 17968 (httpd)
+     Status: "Started, listening on: port 80"
+      Tasks: 177 (limit: 10668)
+     Memory: 13.5M (peak: 13.7M)
+        CPU: 100ms
+     CGroup: /system.slice/httpd.service
+             ├─17968 /usr/sbin/httpd -DFOREGROUND
+             ├─17969 /usr/sbin/httpd -DFOREGROUND
+             ├─17970 /usr/sbin/httpd -DFOREGROUND
+             ├─17971 /usr/sbin/httpd -DFOREGROUND
+             └─17972 /usr/sbin/httpd -DFOREGROUND
+active
+enabled
+● sshd.service - OpenSSH server daemon
+     Loaded: loaded (/usr/lib/systemd/system/sshd.service; enabled; preset: enabled)
+     Active: active (running) since Sat 2026-05-02 19:58:48 UTC; 31min ago
+       Docs: man:sshd(8)
+             man:sshd_config(5)
+   Main PID: 649 (sshd)
+      Tasks: 1 (limit: 10668)
+     Memory: 9.3M (peak: 14.4M)
+        CPU: 1.112s
+     CGroup: /system.slice/sshd.service
+             └─649 "sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups"
+# /usr/lib/systemd/system/httpd.service
+# See httpd.service(8) for more information on using the httpd service.
+
+# Modifying this file in-place is not recommended, because changes
+# will be overwritten during package upgrades.  To customize the
+# behaviour, run "systemctl edit httpd" to create an override unit.
+
+# For example, to pass additional options (such as -D definitions) to
+# the httpd binary at startup, create an override unit (as is done by
+# systemctl edit) and enter the following:
+
+#	[Service]
+#	Environment=OPTIONS=-DMY_DEFINE
+
+[Unit]
+Description=The Apache HTTP Server
+Wants=httpd-init.service
+After=network.target remote-fs.target nss-lookup.target httpd-init.service
+Documentation=man:httpd.service(8)
+
+[Service]
+Type=notify
+Environment=LANG=C
+
+ExecStart=/usr/sbin/httpd $OPTIONS -DFOREGROUND
+ExecReload=/usr/sbin/httpd $OPTIONS -k graceful
+# Send SIGWINCH for graceful stop
+KillSignal=SIGWINCH
+KillMode=mixed
+PrivateTmp=true
+OOMPolicy=continue
+
+[Install]
+WantedBy=multi-user.target
+Done
+Starting KWASU service check...
+NAME="CentOS Stream"
+VERSION="9"
+ID="centos"
+ID_LIKE="rhel fedora"
+VERSION_ID="9"
+PLATFORM_ID="platform:el9"
+PRETTY_NAME="CentOS Stream 9"
+ANSI_COLOR="0;31"
+LOGO="fedora-logo-icon"
+CPE_NAME="cpe:/o:centos:centos:9"
+HOME_URL="https://centos.org/"
+BUG_REPORT_URL="https://issues.redhat.com/"
+REDHAT_SUPPORT_PRODUCT="Red Hat Enterprise Linux 9"
+REDHAT_SUPPORT_PRODUCT_VERSION="CentOS Stream"
+● httpd.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; preset: disabled)
+     Active: active (running) since Sat 2026-05-02 20:30:14 UTC; 540ms ago
+       Docs: man:httpd.service(8)
+   Main PID: 18199 (httpd)
+     Status: "Started, listening on: port 80"
+      Tasks: 177 (limit: 10668)
+     Memory: 13.5M (peak: 13.7M)
+        CPU: 100ms
+     CGroup: /system.slice/httpd.service
+             ├─18199 /usr/sbin/httpd -DFOREGROUND
+             ├─18200 /usr/sbin/httpd -DFOREGROUND
+             ├─18201 /usr/sbin/httpd -DFOREGROUND
+             ├─18202 /usr/sbin/httpd -DFOREGROUND
+             └─18203 /usr/sbin/httpd -DFOREGROUND
+active
+enabled
+● sshd.service - OpenSSH server daemon
+     Loaded: loaded (/usr/lib/systemd/system/sshd.service; enabled; preset: enabled)
+     Active: active (running) since Sat 2026-05-02 19:58:48 UTC; 31min ago
+       Docs: man:sshd(8)
+             man:sshd_config(5)
+   Main PID: 649 (sshd)
+      Tasks: 1 (limit: 10668)
+     Memory: 9.3M (peak: 14.4M)
+        CPU: 1.112s
+     CGroup: /system.slice/sshd.service
+             └─649 "sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups"
+# /usr/lib/systemd/system/httpd.service
+# See httpd.service(8) for more information on using the httpd service.
+
+# Modifying this file in-place is not recommended, because changes
+# will be overwritten during package upgrades.  To customize the
+# behaviour, run "systemctl edit httpd" to create an override unit.
+
+# For example, to pass additional options (such as -D definitions) to
+# the httpd binary at startup, create an override unit (as is done by
+# systemctl edit) and enter the following:
+
+#	[Service]
+#	Environment=OPTIONS=-DMY_DEFINE
+
+[Unit]
+Description=The Apache HTTP Server
+Wants=httpd-init.service
+After=network.target remote-fs.target nss-lookup.target httpd-init.service
+Documentation=man:httpd.service(8)
+
+[Service]
+Type=notify
+Environment=LANG=C
+
+ExecStart=/usr/sbin/httpd $OPTIONS -DFOREGROUND
+ExecReload=/usr/sbin/httpd $OPTIONS -k graceful
+# Send SIGWINCH for graceful stop
+KillSignal=SIGWINCH
+KillMode=mixed
+PrivateTmp=true
+OOMPolicy=continue
+
+[Install]
+WantedBy=multi-user.target
+Done
+Starting KWASU service check...
+NAME="CentOS Stream"
+VERSION="9"
+ID="centos"
+ID_LIKE="rhel fedora"
+VERSION_ID="9"
+PLATFORM_ID="platform:el9"
+PRETTY_NAME="CentOS Stream 9"
+ANSI_COLOR="0;31"
+LOGO="fedora-logo-icon"
+CPE_NAME="cpe:/o:centos:centos:9"
+HOME_URL="https://centos.org/"
+BUG_REPORT_URL="https://issues.redhat.com/"
+REDHAT_SUPPORT_PRODUCT="Red Hat Enterprise Linux 9"
+REDHAT_SUPPORT_PRODUCT_VERSION="CentOS Stream"
+● httpd.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; preset: disabled)
+     Active: active (running) since Sat 2026-05-02 20:30:16 UTC; 548ms ago
+       Docs: man:httpd.service(8)
+   Main PID: 18430 (httpd)
+     Status: "Started, listening on: port 80"
+      Tasks: 177 (limit: 10668)
+     Memory: 13.5M (peak: 13.8M)
+        CPU: 96ms
+     CGroup: /system.slice/httpd.service
+             ├─18430 /usr/sbin/httpd -DFOREGROUND
+             ├─18431 /usr/sbin/httpd -DFOREGROUND
+             ├─18432 /usr/sbin/httpd -DFOREGROUND
+             ├─18433 /usr/sbin/httpd -DFOREGROUND
+             └─18434 /usr/sbin/httpd -DFOREGROUND
+active
+enabled
+● sshd.service - OpenSSH server daemon
+     Loaded: loaded (/usr/lib/systemd/system/sshd.service; enabled; preset: enabled)
+     Active: active (running) since Sat 2026-05-02 19:58:48 UTC; 31min ago
+       Docs: man:sshd(8)
+             man:sshd_config(5)
+   Main PID: 649 (sshd)
+      Tasks: 1 (limit: 10668)
+     Memory: 9.3M (peak: 14.4M)
+        CPU: 1.112s
+     CGroup: /system.slice/sshd.service
+             └─649 "sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups"
+# /usr/lib/systemd/system/httpd.service
+# See httpd.service(8) for more information on using the httpd service.
+
+# Modifying this file in-place is not recommended, because changes
+# will be overwritten during package upgrades.  To customize the
+# behaviour, run "systemctl edit httpd" to create an override unit.
+
+# For example, to pass additional options (such as -D definitions) to
+# the httpd binary at startup, create an override unit (as is done by
+# systemctl edit) and enter the following:
+
+#	[Service]
+#	Environment=OPTIONS=-DMY_DEFINE
+
+[Unit]
+Description=The Apache HTTP Server
+Wants=httpd-init.service
+After=network.target remote-fs.target nss-lookup.target httpd-init.service
+Documentation=man:httpd.service(8)
+
+[Service]
+Type=notify
+Environment=LANG=C
+
+ExecStart=/usr/sbin/httpd $OPTIONS -DFOREGROUND
+ExecReload=/usr/sbin/httpd $OPTIONS -k graceful
+# Send SIGWINCH for graceful stop
+KillSignal=SIGWINCH
+KillMode=mixed
+PrivateTmp=true
+OOMPolicy=continue
+
+[Install]
+WantedBy=multi-user.target
+Done
+Starting KWASU service check...
+NAME="CentOS Stream"
+VERSION="9"
+ID="centos"
+ID_LIKE="rhel fedora"
+VERSION_ID="9"
+PLATFORM_ID="platform:el9"
+PRETTY_NAME="CentOS Stream 9"
+ANSI_COLOR="0;31"
+LOGO="fedora-logo-icon"
+CPE_NAME="cpe:/o:centos:centos:9"
+HOME_URL="https://centos.org/"
+BUG_REPORT_URL="https://issues.redhat.com/"
+REDHAT_SUPPORT_PRODUCT="Red Hat Enterprise Linux 9"
+REDHAT_SUPPORT_PRODUCT_VERSION="CentOS Stream"
+● httpd.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; preset: disabled)
+     Active: active (running) since Sat 2026-05-02 20:30:18 UTC; 546ms ago
+       Docs: man:httpd.service(8)
+   Main PID: 18661 (httpd)
+     Status: "Started, listening on: port 80"
+      Tasks: 177 (limit: 10668)
+     Memory: 13.5M (peak: 13.8M)
+        CPU: 107ms
+     CGroup: /system.slice/httpd.service
+             ├─18661 /usr/sbin/httpd -DFOREGROUND
+             ├─18662 /usr/sbin/httpd -DFOREGROUND
+             ├─18663 /usr/sbin/httpd -DFOREGROUND
+             ├─18664 /usr/sbin/httpd -DFOREGROUND
+             └─18666 /usr/sbin/httpd -DFOREGROUND
+active
+enabled
+● sshd.service - OpenSSH server daemon
+     Loaded: loaded (/usr/lib/systemd/system/sshd.service; enabled; preset: enabled)
+     Active: active (running) since Sat 2026-05-02 19:58:48 UTC; 31min ago
+       Docs: man:sshd(8)
+             man:sshd_config(5)
+   Main PID: 649 (sshd)
+      Tasks: 1 (limit: 10668)
+     Memory: 9.3M (peak: 14.4M)
+        CPU: 1.112s
+     CGroup: /system.slice/sshd.service
+             └─649 "sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups"
+# /usr/lib/systemd/system/httpd.service
+# See httpd.service(8) for more information on using the httpd service.
+
+# Modifying this file in-place is not recommended, because changes
+# will be overwritten during package upgrades.  To customize the
+# behaviour, run "systemctl edit httpd" to create an override unit.
+
+# For example, to pass additional options (such as -D definitions) to
+# the httpd binary at startup, create an override unit (as is done by
+# systemctl edit) and enter the following:
+
+#	[Service]
+#	Environment=OPTIONS=-DMY_DEFINE
+
+[Unit]
+Description=The Apache HTTP Server
+Wants=httpd-init.service
+After=network.target remote-fs.target nss-lookup.target httpd-init.service
+Documentation=man:httpd.service(8)
+
+[Service]
+Type=notify
+Environment=LANG=C
+
+ExecStart=/usr/sbin/httpd $OPTIONS -DFOREGROUND
+ExecReload=/usr/sbin/httpd $OPTIONS -k graceful
+# Send SIGWINCH for graceful stop
+KillSignal=SIGWINCH
+KillMode=mixed
+PrivateTmp=true
+OOMPolicy=continue
+
+[Install]
+WantedBy=multi-user.target
+Done
+Starting KWASU service check...
+NAME="CentOS Stream"
+VERSION="9"
+ID="centos"
+ID_LIKE="rhel fedora"
+VERSION_ID="9"
+PLATFORM_ID="platform:el9"
+PRETTY_NAME="CentOS Stream 9"
+ANSI_COLOR="0;31"
+LOGO="fedora-logo-icon"
+CPE_NAME="cpe:/o:centos:centos:9"
+HOME_URL="https://centos.org/"
+BUG_REPORT_URL="https://issues.redhat.com/"
+REDHAT_SUPPORT_PRODUCT="Red Hat Enterprise Linux 9"
+REDHAT_SUPPORT_PRODUCT_VERSION="CentOS Stream"
+● httpd.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; preset: disabled)
+     Active: active (running) since Sat 2026-05-02 20:30:21 UTC; 531ms ago
+       Docs: man:httpd.service(8)
+   Main PID: 18892 (httpd)
+     Status: "Started, listening on: port 80"
+      Tasks: 177 (limit: 10668)
+     Memory: 13.5M (peak: 13.9M)
+        CPU: 87ms
+     CGroup: /system.slice/httpd.service
+             ├─18892 /usr/sbin/httpd -DFOREGROUND
+             ├─18894 /usr/sbin/httpd -DFOREGROUND
+             ├─18895 /usr/sbin/httpd -DFOREGROUND
+             ├─18896 /usr/sbin/httpd -DFOREGROUND
+             └─18897 /usr/sbin/httpd -DFOREGROUND
+active
+enabled
+● sshd.service - OpenSSH server daemon
+     Loaded: loaded (/usr/lib/systemd/system/sshd.service; enabled; preset: enabled)
+     Active: active (running) since Sat 2026-05-02 19:58:48 UTC; 31min ago
+       Docs: man:sshd(8)
+             man:sshd_config(5)
+   Main PID: 649 (sshd)
+      Tasks: 1 (limit: 10668)
+     Memory: 9.3M (peak: 14.4M)
+        CPU: 1.112s
+     CGroup: /system.slice/sshd.service
+             └─649 "sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups"
+# /usr/lib/systemd/system/httpd.service
+# See httpd.service(8) for more information on using the httpd service.
+
+# Modifying this file in-place is not recommended, because changes
+# will be overwritten during package upgrades.  To customize the
+# behaviour, run "systemctl edit httpd" to create an override unit.
+
+# For example, to pass additional options (such as -D definitions) to
+# the httpd binary at startup, create an override unit (as is done by
+# systemctl edit) and enter the following:
+
+#	[Service]
+#	Environment=OPTIONS=-DMY_DEFINE
+
+[Unit]
+Description=The Apache HTTP Server
+Wants=httpd-init.service
+After=network.target remote-fs.target nss-lookup.target httpd-init.service
+Documentation=man:httpd.service(8)
+
+[Service]
+Type=notify
+Environment=LANG=C
+
+ExecStart=/usr/sbin/httpd $OPTIONS -DFOREGROUND
+ExecReload=/usr/sbin/httpd $OPTIONS -k graceful
+# Send SIGWINCH for graceful stop
+KillSignal=SIGWINCH
+KillMode=mixed
+PrivateTmp=true
+OOMPolicy=continue
+
+[Install]
+WantedBy=multi-user.target
+Done
+Starting KWASU service check...
+NAME="CentOS Stream"
+VERSION="9"
+ID="centos"
+ID_LIKE="rhel fedora"
+VERSION_ID="9"
+PLATFORM_ID="platform:el9"
+PRETTY_NAME="CentOS Stream 9"
+ANSI_COLOR="0;31"
+LOGO="fedora-logo-icon"
+CPE_NAME="cpe:/o:centos:centos:9"
+HOME_URL="https://centos.org/"
+BUG_REPORT_URL="https://issues.redhat.com/"
+REDHAT_SUPPORT_PRODUCT="Red Hat Enterprise Linux 9"
+REDHAT_SUPPORT_PRODUCT_VERSION="CentOS Stream"
+● httpd.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; preset: disabled)
+     Active: active (running) since Sat 2026-05-02 20:30:28 UTC; 671ms ago
+       Docs: man:httpd.service(8)
+   Main PID: 19124 (httpd)
+     Status: "Started, listening on: port 80"
+      Tasks: 177 (limit: 10668)
+     Memory: 13.5M (peak: 13.7M)
+        CPU: 115ms
+     CGroup: /system.slice/httpd.service
+             ├─19124 /usr/sbin/httpd -DFOREGROUND
+             ├─19125 /usr/sbin/httpd -DFOREGROUND
+             ├─19126 /usr/sbin/httpd -DFOREGROUND
+             ├─19127 /usr/sbin/httpd -DFOREGROUND
+             └─19128 /usr/sbin/httpd -DFOREGROUND
+active
+enabled
+● sshd.service - OpenSSH server daemon
+     Loaded: loaded (/usr/lib/systemd/system/sshd.service; enabled; preset: enabled)
+     Active: active (running) since Sat 2026-05-02 19:58:48 UTC; 31min ago
+       Docs: man:sshd(8)
+             man:sshd_config(5)
+   Main PID: 649 (sshd)
+      Tasks: 1 (limit: 10668)
+     Memory: 9.3M (peak: 14.4M)
+        CPU: 1.112s
+     CGroup: /system.slice/sshd.service
+             └─649 "sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups"
+# /usr/lib/systemd/system/httpd.service
+# See httpd.service(8) for more information on using the httpd service.
+
+# Modifying this file in-place is not recommended, because changes
+# will be overwritten during package upgrades.  To customize the
+# behaviour, run "systemctl edit httpd" to create an override unit.
+
+# For example, to pass additional options (such as -D definitions) to
+# the httpd binary at startup, create an override unit (as is done by
+# systemctl edit) and enter the following:
+
+#	[Service]
+#	Environment=OPTIONS=-DMY_DEFINE
+
+[Unit]
+Description=The Apache HTTP Server
+Wants=httpd-init.service
+After=network.target remote-fs.target nss-lookup.target httpd-init.service
+Documentation=man:httpd.service(8)
+
+[Service]
+Type=notify
+Environment=LANG=C
+
+ExecStart=/usr/sbin/httpd $OPTIONS -DFOREGROUND
+ExecReload=/usr/sbin/httpd $OPTIONS -k graceful
+# Send SIGWINCH for graceful stop
+KillSignal=SIGWINCH
+KillMode=mixed
+PrivateTmp=true
+OOMPolicy=continue
+
+[Install]
+WantedBy=multi-user.target
+Done
+Starting KWASU service check...
+NAME="CentOS Stream"
+VERSION="9"
+ID="centos"
+ID_LIKE="rhel fedora"
+VERSION_ID="9"
+PLATFORM_ID="platform:el9"
+PRETTY_NAME="CentOS Stream 9"
+ANSI_COLOR="0;31"
+LOGO="fedora-logo-icon"
+CPE_NAME="cpe:/o:centos:centos:9"
+HOME_URL="https://centos.org/"
+BUG_REPORT_URL="https://issues.redhat.com/"
+REDHAT_SUPPORT_PRODUCT="Red Hat Enterprise Linux 9"
+REDHAT_SUPPORT_PRODUCT_VERSION="CentOS Stream"
+● httpd.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; preset: disabled)
+     Active: active (running) since Sat 2026-05-02 20:30:31 UTC; 579ms ago
+       Docs: man:httpd.service(8)
+   Main PID: 19355 (httpd)
+     Status: "Started, listening on: port 80"
+      Tasks: 177 (limit: 10668)
+     Memory: 13.5M (peak: 13.5M)
+        CPU: 94ms
+     CGroup: /system.slice/httpd.service
+             ├─19355 /usr/sbin/httpd -DFOREGROUND
+             ├─19356 /usr/sbin/httpd -DFOREGROUND
+             ├─19357 /usr/sbin/httpd -DFOREGROUND
+             ├─19358 /usr/sbin/httpd -DFOREGROUND
+             └─19359 /usr/sbin/httpd -DFOREGROUND
+active
+enabled
+● sshd.service - OpenSSH server daemon
+     Loaded: loaded (/usr/lib/systemd/system/sshd.service; enabled; preset: enabled)
+     Active: active (running) since Sat 2026-05-02 19:58:48 UTC; 31min ago
+       Docs: man:sshd(8)
+             man:sshd_config(5)
+   Main PID: 649 (sshd)
+      Tasks: 1 (limit: 10668)
+     Memory: 9.3M (peak: 14.4M)
+        CPU: 1.112s
+     CGroup: /system.slice/sshd.service
+             └─649 "sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups"
+# /usr/lib/systemd/system/httpd.service
+# See httpd.service(8) for more information on using the httpd service.
+
+# Modifying this file in-place is not recommended, because changes
+# will be overwritten during package upgrades.  To customize the
+# behaviour, run "systemctl edit httpd" to create an override unit.
+
+# For example, to pass additional options (such as -D definitions) to
+# the httpd binary at startup, create an override unit (as is done by
+# systemctl edit) and enter the following:
+
+#	[Service]
+#	Environment=OPTIONS=-DMY_DEFINE
+
+[Unit]
+Description=The Apache HTTP Server
+Wants=httpd-init.service
+After=network.target remote-fs.target nss-lookup.target httpd-init.service
+Documentation=man:httpd.service(8)
+
+[Service]
+Type=notify
+Environment=LANG=C
+
+ExecStart=/usr/sbin/httpd $OPTIONS -DFOREGROUND
+ExecReload=/usr/sbin/httpd $OPTIONS -k graceful
+# Send SIGWINCH for graceful stop
+KillSignal=SIGWINCH
+KillMode=mixed
+PrivateTmp=true
+OOMPolicy=continue
+
+[Install]
+WantedBy=multi-user.target
+Done
+Starting KWASU service check...
+NAME="CentOS Stream"
+VERSION="9"
+ID="centos"
+ID_LIKE="rhel fedora"
+VERSION_ID="9"
+PLATFORM_ID="platform:el9"
+PRETTY_NAME="CentOS Stream 9"
+ANSI_COLOR="0;31"
+LOGO="fedora-logo-icon"
+CPE_NAME="cpe:/o:centos:centos:9"
+HOME_URL="https://centos.org/"
+BUG_REPORT_URL="https://issues.redhat.com/"
+REDHAT_SUPPORT_PRODUCT="Red Hat Enterprise Linux 9"
+REDHAT_SUPPORT_PRODUCT_VERSION="CentOS Stream"
+● httpd.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; preset: disabled)
+     Active: active (running) since Sat 2026-05-02 20:30:33 UTC; 583ms ago
+       Docs: man:httpd.service(8)
+   Main PID: 19586 (httpd)
+     Status: "Started, listening on: port 80"
+      Tasks: 177 (limit: 10668)
+     Memory: 13.5M (peak: 13.8M)
+        CPU: 111ms
+     CGroup: /system.slice/httpd.service
+             ├─19586 /usr/sbin/httpd -DFOREGROUND
+             ├─19587 /usr/sbin/httpd -DFOREGROUND
+             ├─19588 /usr/sbin/httpd -DFOREGROUND
+             ├─19589 /usr/sbin/httpd -DFOREGROUND
+             └─19590 /usr/sbin/httpd -DFOREGROUND
+active
+enabled
+● sshd.service - OpenSSH server daemon
+     Loaded: loaded (/usr/lib/systemd/system/sshd.service; enabled; preset: enabled)
+     Active: active (running) since Sat 2026-05-02 19:58:48 UTC; 31min ago
+       Docs: man:sshd(8)
+             man:sshd_config(5)
+   Main PID: 649 (sshd)
+      Tasks: 1 (limit: 10668)
+     Memory: 9.3M (peak: 14.4M)
+        CPU: 1.112s
+     CGroup: /system.slice/sshd.service
+             └─649 "sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups"
+# /usr/lib/systemd/system/httpd.service
+# See httpd.service(8) for more information on using the httpd service.
+
+# Modifying this file in-place is not recommended, because changes
+# will be overwritten during package upgrades.  To customize the
+# behaviour, run "systemctl edit httpd" to create an override unit.
+
+# For example, to pass additional options (such as -D definitions) to
+# the httpd binary at startup, create an override unit (as is done by
+# systemctl edit) and enter the following:
+
+#	[Service]
+#	Environment=OPTIONS=-DMY_DEFINE
+
+[Unit]
+Description=The Apache HTTP Server
+Wants=httpd-init.service
+After=network.target remote-fs.target nss-lookup.target httpd-init.service
+Documentation=man:httpd.service(8)
+
+[Service]
+Type=notify
+Environment=LANG=C
+
+ExecStart=/usr/sbin/httpd $OPTIONS -DFOREGROUND
+ExecReload=/usr/sbin/httpd $OPTIONS -k graceful
+# Send SIGWINCH for graceful stop
+KillSignal=SIGWINCH
+KillMode=mixed
+PrivateTmp=true
+OOMPolicy=continue
+
+[Install]
+WantedBy=multi-user.target
+Done
+Starting KWASU service check...
+NAME="CentOS Stream"
+VERSION="9"
+ID="centos"
+ID_LIKE="rhel fedora"
+VERSION_ID="9"
+PLATFORM_ID="platform:el9"
+PRETTY_NAME="CentOS Stream 9"
+ANSI_COLOR="0;31"
+LOGO="fedora-logo-icon"
+CPE_NAME="cpe:/o:centos:centos:9"
+HOME_URL="https://centos.org/"
+BUG_REPORT_URL="https://issues.redhat.com/"
+REDHAT_SUPPORT_PRODUCT="Red Hat Enterprise Linux 9"
+REDHAT_SUPPORT_PRODUCT_VERSION="CentOS Stream"
+● httpd.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; preset: disabled)
+     Active: active (running) since Sat 2026-05-02 20:30:36 UTC; 560ms ago
+       Docs: man:httpd.service(8)
+   Main PID: 19817 (httpd)
+     Status: "Started, listening on: port 80"
+      Tasks: 177 (limit: 10668)
+     Memory: 13.5M (peak: 14.0M)
+        CPU: 116ms
+     CGroup: /system.slice/httpd.service
+             ├─19817 /usr/sbin/httpd -DFOREGROUND
+             ├─19818 /usr/sbin/httpd -DFOREGROUND
+             ├─19819 /usr/sbin/httpd -DFOREGROUND
+             ├─19820 /usr/sbin/httpd -DFOREGROUND
+             └─19821 /usr/sbin/httpd -DFOREGROUND
+active
+enabled
+● sshd.service - OpenSSH server daemon
+     Loaded: loaded (/usr/lib/systemd/system/sshd.service; enabled; preset: enabled)
+     Active: active (running) since Sat 2026-05-02 19:58:48 UTC; 31min ago
+       Docs: man:sshd(8)
+             man:sshd_config(5)
+   Main PID: 649 (sshd)
+      Tasks: 1 (limit: 10668)
+     Memory: 9.3M (peak: 14.4M)
+        CPU: 1.112s
+     CGroup: /system.slice/sshd.service
+             └─649 "sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups"
+# /usr/lib/systemd/system/httpd.service
+# See httpd.service(8) for more information on using the httpd service.
+
+# Modifying this file in-place is not recommended, because changes
+# will be overwritten during package upgrades.  To customize the
+# behaviour, run "systemctl edit httpd" to create an override unit.
+
+# For example, to pass additional options (such as -D definitions) to
+# the httpd binary at startup, create an override unit (as is done by
+# systemctl edit) and enter the following:
+
+#	[Service]
+#	Environment=OPTIONS=-DMY_DEFINE
+
+[Unit]
+Description=The Apache HTTP Server
+Wants=httpd-init.service
+After=network.target remote-fs.target nss-lookup.target httpd-init.service
+Documentation=man:httpd.service(8)
+
+[Service]
+Type=notify
+Environment=LANG=C
+
+ExecStart=/usr/sbin/httpd $OPTIONS -DFOREGROUND
+ExecReload=/usr/sbin/httpd $OPTIONS -k graceful
+# Send SIGWINCH for graceful stop
+KillSignal=SIGWINCH
+KillMode=mixed
+PrivateTmp=true
+OOMPolicy=continue
+
+[Install]
+WantedBy=multi-user.target
+Done
+Starting KWASU service check...
+NAME="CentOS Stream"
+VERSION="9"
+ID="centos"
+ID_LIKE="rhel fedora"
+VERSION_ID="9"
+PLATFORM_ID="platform:el9"
+PRETTY_NAME="CentOS Stream 9"
+ANSI_COLOR="0;31"
+LOGO="fedora-logo-icon"
+CPE_NAME="cpe:/o:centos:centos:9"
+HOME_URL="https://centos.org/"
+BUG_REPORT_URL="https://issues.redhat.com/"
+REDHAT_SUPPORT_PRODUCT="Red Hat Enterprise Linux 9"
+REDHAT_SUPPORT_PRODUCT_VERSION="CentOS Stream"
+● httpd.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; preset: disabled)
+     Active: active (running) since Sat 2026-05-02 20:30:38 UTC; 564ms ago
+       Docs: man:httpd.service(8)
+   Main PID: 20048 (httpd)
+     Status: "Started, listening on: port 80"
+      Tasks: 177 (limit: 10668)
+     Memory: 13.5M (peak: 13.7M)
+        CPU: 111ms
+     CGroup: /system.slice/httpd.service
+             ├─20048 /usr/sbin/httpd -DFOREGROUND
+             ├─20049 /usr/sbin/httpd -DFOREGROUND
+             ├─20050 /usr/sbin/httpd -DFOREGROUND
+             ├─20051 /usr/sbin/httpd -DFOREGROUND
+             └─20052 /usr/sbin/httpd -DFOREGROUND
+active
+enabled
+● sshd.service - OpenSSH server daemon
+     Loaded: loaded (/usr/lib/systemd/system/sshd.service; enabled; preset: enabled)
+     Active: active (running) since Sat 2026-05-02 19:58:48 UTC; 31min ago
+       Docs: man:sshd(8)
+             man:sshd_config(5)
+   Main PID: 649 (sshd)
+      Tasks: 1 (limit: 10668)
+     Memory: 9.3M (peak: 14.4M)
+        CPU: 1.112s
+     CGroup: /system.slice/sshd.service
+             └─649 "sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups"
+# /usr/lib/systemd/system/httpd.service
+# See httpd.service(8) for more information on using the httpd service.
+
+# Modifying this file in-place is not recommended, because changes
+# will be overwritten during package upgrades.  To customize the
+# behaviour, run "systemctl edit httpd" to create an override unit.
+
+# For example, to pass additional options (such as -D definitions) to
+# the httpd binary at startup, create an override unit (as is done by
+# systemctl edit) and enter the following:
+
+#	[Service]
+#	Environment=OPTIONS=-DMY_DEFINE
+
+[Unit]
+Description=The Apache HTTP Server
+Wants=httpd-init.service
+After=network.target remote-fs.target nss-lookup.target httpd-init.service
+Documentation=man:httpd.service(8)
+
+[Service]
+Type=notify
+Environment=LANG=C
+
+ExecStart=/usr/sbin/httpd $OPTIONS -DFOREGROUND
+ExecReload=/usr/sbin/httpd $OPTIONS -k graceful
+# Send SIGWINCH for graceful stop
+KillSignal=SIGWINCH
+KillMode=mixed
+PrivateTmp=true
+OOMPolicy=continue
+
+[Install]
+WantedBy=multi-user.target
+Done
+Starting KWASU service check...
+NAME="CentOS Stream"
+VERSION="9"
+ID="centos"
+ID_LIKE="rhel fedora"
+VERSION_ID="9"
+PLATFORM_ID="platform:el9"
+PRETTY_NAME="CentOS Stream 9"
+ANSI_COLOR="0;31"
+LOGO="fedora-logo-icon"
+CPE_NAME="cpe:/o:centos:centos:9"
+HOME_URL="https://centos.org/"
+BUG_REPORT_URL="https://issues.redhat.com/"
+REDHAT_SUPPORT_PRODUCT="Red Hat Enterprise Linux 9"
+REDHAT_SUPPORT_PRODUCT_VERSION="CentOS Stream"
+● httpd.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; preset: disabled)
+     Active: active (running) since Sat 2026-05-02 20:30:40 UTC; 544ms ago
+       Docs: man:httpd.service(8)
+   Main PID: 20279 (httpd)
+     Status: "Started, listening on: port 80"
+      Tasks: 177 (limit: 10668)
+     Memory: 13.5M (peak: 13.7M)
+        CPU: 109ms
+     CGroup: /system.slice/httpd.service
+             ├─20279 /usr/sbin/httpd -DFOREGROUND
+             ├─20280 /usr/sbin/httpd -DFOREGROUND
+             ├─20281 /usr/sbin/httpd -DFOREGROUND
+             ├─20283 /usr/sbin/httpd -DFOREGROUND
+             └─20284 /usr/sbin/httpd -DFOREGROUND
+active
+enabled
+● sshd.service - OpenSSH server daemon
+     Loaded: loaded (/usr/lib/systemd/system/sshd.service; enabled; preset: enabled)
+     Active: active (running) since Sat 2026-05-02 19:58:48 UTC; 31min ago
+       Docs: man:sshd(8)
+             man:sshd_config(5)
+   Main PID: 649 (sshd)
+      Tasks: 1 (limit: 10668)
+     Memory: 9.3M (peak: 14.4M)
+        CPU: 1.112s
+     CGroup: /system.slice/sshd.service
+             └─649 "sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups"
+# /usr/lib/systemd/system/httpd.service
+# See httpd.service(8) for more information on using the httpd service.
+
+# Modifying this file in-place is not recommended, because changes
+# will be overwritten during package upgrades.  To customize the
+# behaviour, run "systemctl edit httpd" to create an override unit.
+
+# For example, to pass additional options (such as -D definitions) to
+# the httpd binary at startup, create an override unit (as is done by
+# systemctl edit) and enter the following:
+
+#	[Service]
+#	Environment=OPTIONS=-DMY_DEFINE
+
+[Unit]
+Description=The Apache HTTP Server
+Wants=httpd-init.service
+After=network.target remote-fs.target nss-lookup.target httpd-init.service
+Documentation=man:httpd.service(8)
+
+[Service]
+Type=notify
+Environment=LANG=C
+
+ExecStart=/usr/sbin/httpd $OPTIONS -DFOREGROUND
+ExecReload=/usr/sbin/httpd $OPTIONS -k graceful
+# Send SIGWINCH for graceful stop
+KillSignal=SIGWINCH
+KillMode=mixed
+PrivateTmp=true
+OOMPolicy=continue
+
+[Install]
+WantedBy=multi-user.target
+Done
+Starting KWASU service check...
+NAME="CentOS Stream"
+VERSION="9"
+ID="centos"
+ID_LIKE="rhel fedora"
+VERSION_ID="9"
+PLATFORM_ID="platform:el9"
+PRETTY_NAME="CentOS Stream 9"
+ANSI_COLOR="0;31"
+LOGO="fedora-logo-icon"
+CPE_NAME="cpe:/o:centos:centos:9"
+HOME_URL="https://centos.org/"
+BUG_REPORT_URL="https://issues.redhat.com/"
+REDHAT_SUPPORT_PRODUCT="Red Hat Enterprise Linux 9"
+REDHAT_SUPPORT_PRODUCT_VERSION="CentOS Stream"
+● httpd.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; preset: disabled)
+     Active: active (running) since Sat 2026-05-02 20:30:43 UTC; 533ms ago
+       Docs: man:httpd.service(8)
+   Main PID: 20510 (httpd)
+     Status: "Started, listening on: port 80"
+      Tasks: 177 (limit: 10668)
+     Memory: 13.5M (peak: 13.8M)
+        CPU: 117ms
+     CGroup: /system.slice/httpd.service
+             ├─20510 /usr/sbin/httpd -DFOREGROUND
+             ├─20512 /usr/sbin/httpd -DFOREGROUND
+             ├─20513 /usr/sbin/httpd -DFOREGROUND
+             ├─20514 /usr/sbin/httpd -DFOREGROUND
+             └─20515 /usr/sbin/httpd -DFOREGROUND
+active
+enabled
+● sshd.service - OpenSSH server daemon
+     Loaded: loaded (/usr/lib/systemd/system/sshd.service; enabled; preset: enabled)
+     Active: active (running) since Sat 2026-05-02 19:58:48 UTC; 31min ago
+       Docs: man:sshd(8)
+             man:sshd_config(5)
+   Main PID: 649 (sshd)
+      Tasks: 1 (limit: 10668)
+     Memory: 9.3M (peak: 14.4M)
+        CPU: 1.112s
+     CGroup: /system.slice/sshd.service
+             └─649 "sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups"
+# /usr/lib/systemd/system/httpd.service
+# See httpd.service(8) for more information on using the httpd service.
+
+# Modifying this file in-place is not recommended, because changes
+# will be overwritten during package upgrades.  To customize the
+# behaviour, run "systemctl edit httpd" to create an override unit.
+
+# For example, to pass additional options (such as -D definitions) to
+# the httpd binary at startup, create an override unit (as is done by
+# systemctl edit) and enter the following:
+
+#	[Service]
+#	Environment=OPTIONS=-DMY_DEFINE
+
+[Unit]
+Description=The Apache HTTP Server
+Wants=httpd-init.service
+After=network.target remote-fs.target nss-lookup.target httpd-init.service
+Documentation=man:httpd.service(8)
+
+[Service]
+Type=notify
+Environment=LANG=C
+
+ExecStart=/usr/sbin/httpd $OPTIONS -DFOREGROUND
+ExecReload=/usr/sbin/httpd $OPTIONS -k graceful
+# Send SIGWINCH for graceful stop
+KillSignal=SIGWINCH
+KillMode=mixed
+PrivateTmp=true
+OOMPolicy=continue
+
+[Install]
+WantedBy=multi-user.target
+Done
+Starting KWASU service check...
+NAME="CentOS Stream"
+VERSION="9"
+ID="centos"
+ID_LIKE="rhel fedora"
+VERSION_ID="9"
+PLATFORM_ID="platform:el9"
+PRETTY_NAME="CentOS Stream 9"
+ANSI_COLOR="0;31"
+LOGO="fedora-logo-icon"
+CPE_NAME="cpe:/o:centos:centos:9"
+HOME_URL="https://centos.org/"
+BUG_REPORT_URL="https://issues.redhat.com/"
+REDHAT_SUPPORT_PRODUCT="Red Hat Enterprise Linux 9"
+REDHAT_SUPPORT_PRODUCT_VERSION="CentOS Stream"
+● httpd.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; preset: disabled)
+     Active: active (running) since Sat 2026-05-02 20:30:45 UTC; 535ms ago
+       Docs: man:httpd.service(8)
+   Main PID: 20742 (httpd)
+     Status: "Started, listening on: port 80"
+      Tasks: 177 (limit: 10668)
+     Memory: 13.5M (peak: 13.9M)
+        CPU: 110ms
+     CGroup: /system.slice/httpd.service
+             ├─20742 /usr/sbin/httpd -DFOREGROUND
+             ├─20743 /usr/sbin/httpd -DFOREGROUND
+             ├─20745 /usr/sbin/httpd -DFOREGROUND
+             ├─20746 /usr/sbin/httpd -DFOREGROUND
+             └─20747 /usr/sbin/httpd -DFOREGROUND
+active
+enabled
+● sshd.service - OpenSSH server daemon
+     Loaded: loaded (/usr/lib/systemd/system/sshd.service; enabled; preset: enabled)
+     Active: active (running) since Sat 2026-05-02 19:58:48 UTC; 32min ago
+       Docs: man:sshd(8)
+             man:sshd_config(5)
+   Main PID: 649 (sshd)
+      Tasks: 1 (limit: 10668)
+     Memory: 9.3M (peak: 14.4M)
+        CPU: 1.112s
+     CGroup: /system.slice/sshd.service
+             └─649 "sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups"
+# /usr/lib/systemd/system/httpd.service
+# See httpd.service(8) for more information on using the httpd service.
+
+# Modifying this file in-place is not recommended, because changes
+# will be overwritten during package upgrades.  To customize the
+# behaviour, run "systemctl edit httpd" to create an override unit.
+
+# For example, to pass additional options (such as -D definitions) to
+# the httpd binary at startup, create an override unit (as is done by
+# systemctl edit) and enter the following:
+
+#	[Service]
+#	Environment=OPTIONS=-DMY_DEFINE
+
+[Unit]
+Description=The Apache HTTP Server
+Wants=httpd-init.service
+After=network.target remote-fs.target nss-lookup.target httpd-init.service
+Documentation=man:httpd.service(8)
+
+[Service]
+Type=notify
+Environment=LANG=C
+
+ExecStart=/usr/sbin/httpd $OPTIONS -DFOREGROUND
+ExecReload=/usr/sbin/httpd $OPTIONS -k graceful
+# Send SIGWINCH for graceful stop
+KillSignal=SIGWINCH
+KillMode=mixed
+PrivateTmp=true
+OOMPolicy=continue
+
+[Install]
+WantedBy=multi-user.target
+Done
+Starting KWASU service check...
+NAME="CentOS Stream"
+VERSION="9"
+ID="centos"
+ID_LIKE="rhel fedora"
+VERSION_ID="9"
+PLATFORM_ID="platform:el9"
+PRETTY_NAME="CentOS Stream 9"
+ANSI_COLOR="0;31"
+LOGO="fedora-logo-icon"
+CPE_NAME="cpe:/o:centos:centos:9"
+HOME_URL="https://centos.org/"
+BUG_REPORT_URL="https://issues.redhat.com/"
+REDHAT_SUPPORT_PRODUCT="Red Hat Enterprise Linux 9"
+REDHAT_SUPPORT_PRODUCT_VERSION="CentOS Stream"
+● httpd.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; preset: disabled)
+     Active: active (running) since Sat 2026-05-02 20:30:47 UTC; 531ms ago
+       Docs: man:httpd.service(8)
+   Main PID: 20974 (httpd)
+     Status: "Started, listening on: port 80"
+      Tasks: 177 (limit: 10668)
+     Memory: 13.5M (peak: 14.0M)
+        CPU: 122ms
+     CGroup: /system.slice/httpd.service
+             ├─20974 /usr/sbin/httpd -DFOREGROUND
+             ├─20975 /usr/sbin/httpd -DFOREGROUND
+             ├─20976 /usr/sbin/httpd -DFOREGROUND
+             ├─20977 /usr/sbin/httpd -DFOREGROUND
+             └─20979 /usr/sbin/httpd -DFOREGROUND
+active
+enabled
+● sshd.service - OpenSSH server daemon
+     Loaded: loaded (/usr/lib/systemd/system/sshd.service; enabled; preset: enabled)
+     Active: active (running) since Sat 2026-05-02 19:58:48 UTC; 32min ago
+       Docs: man:sshd(8)
+             man:sshd_config(5)
+   Main PID: 649 (sshd)
+      Tasks: 1 (limit: 10668)
+     Memory: 9.3M (peak: 14.4M)
+        CPU: 1.112s
+     CGroup: /system.slice/sshd.service
+             └─649 "sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups"
+# /usr/lib/systemd/system/httpd.service
+# See httpd.service(8) for more information on using the httpd service.
+
+# Modifying this file in-place is not recommended, because changes
+# will be overwritten during package upgrades.  To customize the
+# behaviour, run "systemctl edit httpd" to create an override unit.
+
+# For example, to pass additional options (such as -D definitions) to
+# the httpd binary at startup, create an override unit (as is done by
+# systemctl edit) and enter the following:
+
+#	[Service]
+#	Environment=OPTIONS=-DMY_DEFINE
+
+[Unit]
+Description=The Apache HTTP Server
+Wants=httpd-init.service
+After=network.target remote-fs.target nss-lookup.target httpd-init.service
+Documentation=man:httpd.service(8)
+
+[Service]
+Type=notify
+Environment=LANG=C
+
+ExecStart=/usr/sbin/httpd $OPTIONS -DFOREGROUND
+ExecReload=/usr/sbin/httpd $OPTIONS -k graceful
+# Send SIGWINCH for graceful stop
+KillSignal=SIGWINCH
+KillMode=mixed
+PrivateTmp=true
+OOMPolicy=continue
+
+[Install]
+WantedBy=multi-user.target
+Done
+Starting KWASU service check...
+NAME="CentOS Stream"
+VERSION="9"
+ID="centos"
+ID_LIKE="rhel fedora"
+VERSION_ID="9"
+PLATFORM_ID="platform:el9"
+PRETTY_NAME="CentOS Stream 9"
+ANSI_COLOR="0;31"
+LOGO="fedora-logo-icon"
+CPE_NAME="cpe:/o:centos:centos:9"
+HOME_URL="https://centos.org/"
+BUG_REPORT_URL="https://issues.redhat.com/"
+REDHAT_SUPPORT_PRODUCT="Red Hat Enterprise Linux 9"
+REDHAT_SUPPORT_PRODUCT_VERSION="CentOS Stream"
+● httpd.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; preset: disabled)
+     Active: active (running) since Sat 2026-05-02 20:30:50 UTC; 587ms ago
+       Docs: man:httpd.service(8)
+   Main PID: 21205 (httpd)
+     Status: "Started, listening on: port 80"
+      Tasks: 177 (limit: 10668)
+     Memory: 13.5M (peak: 13.6M)
+        CPU: 115ms
+     CGroup: /system.slice/httpd.service
+             ├─21205 /usr/sbin/httpd -DFOREGROUND
+             ├─21206 /usr/sbin/httpd -DFOREGROUND
+             ├─21207 /usr/sbin/httpd -DFOREGROUND
+             ├─21208 /usr/sbin/httpd -DFOREGROUND
+             └─21209 /usr/sbin/httpd -DFOREGROUND
+active
+enabled
+● sshd.service - OpenSSH server daemon
+     Loaded: loaded (/usr/lib/systemd/system/sshd.service; enabled; preset: enabled)
+     Active: active (running) since Sat 2026-05-02 19:58:48 UTC; 32min ago
+       Docs: man:sshd(8)
+             man:sshd_config(5)
+   Main PID: 649 (sshd)
+      Tasks: 1 (limit: 10668)
+     Memory: 9.3M (peak: 14.4M)
+        CPU: 1.112s
+     CGroup: /system.slice/sshd.service
+             └─649 "sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups"
+# /usr/lib/systemd/system/httpd.service
+# See httpd.service(8) for more information on using the httpd service.
+
+# Modifying this file in-place is not recommended, because changes
+# will be overwritten during package upgrades.  To customize the
+# behaviour, run "systemctl edit httpd" to create an override unit.
+
+# For example, to pass additional options (such as -D definitions) to
+# the httpd binary at startup, create an override unit (as is done by
+# systemctl edit) and enter the following:
+
+#	[Service]
+#	Environment=OPTIONS=-DMY_DEFINE
+
+[Unit]
+Description=The Apache HTTP Server
+Wants=httpd-init.service
+After=network.target remote-fs.target nss-lookup.target httpd-init.service
+Documentation=man:httpd.service(8)
+
+[Service]
+Type=notify
+Environment=LANG=C
+
+ExecStart=/usr/sbin/httpd $OPTIONS -DFOREGROUND
+ExecReload=/usr/sbin/httpd $OPTIONS -k graceful
+# Send SIGWINCH for graceful stop
+KillSignal=SIGWINCH
+KillMode=mixed
+PrivateTmp=true
+OOMPolicy=continue
+
+[Install]
+WantedBy=multi-user.target
+Done
+Starting KWASU service check...
+NAME="CentOS Stream"
+VERSION="9"
+ID="centos"
+ID_LIKE="rhel fedora"
+VERSION_ID="9"
+PLATFORM_ID="platform:el9"
+PRETTY_NAME="CentOS Stream 9"
+ANSI_COLOR="0;31"
+LOGO="fedora-logo-icon"
+CPE_NAME="cpe:/o:centos:centos:9"
+HOME_URL="https://centos.org/"
+BUG_REPORT_URL="https://issues.redhat.com/"
+REDHAT_SUPPORT_PRODUCT="Red Hat Enterprise Linux 9"
+REDHAT_SUPPORT_PRODUCT_VERSION="CentOS Stream"
+● httpd.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; preset: disabled)
+     Active: active (running) since Sat 2026-05-02 20:30:52 UTC; 653ms ago
+       Docs: man:httpd.service(8)
+   Main PID: 21436 (httpd)
+     Status: "Started, listening on: port 80"
+      Tasks: 177 (limit: 10668)
+     Memory: 13.5M (peak: 13.6M)
+        CPU: 112ms
+     CGroup: /system.slice/httpd.service
+             ├─21436 /usr/sbin/httpd -DFOREGROUND
+             ├─21437 /usr/sbin/httpd -DFOREGROUND
+             ├─21438 /usr/sbin/httpd -DFOREGROUND
+             ├─21466 /usr/sbin/httpd -DFOREGROUND
+             └─21468 /usr/sbin/httpd -DFOREGROUND
+active
+enabled
+● sshd.service - OpenSSH server daemon
+     Loaded: loaded (/usr/lib/systemd/system/sshd.service; enabled; preset: enabled)
+     Active: active (running) since Sat 2026-05-02 19:58:48 UTC; 32min ago
+       Docs: man:sshd(8)
+             man:sshd_config(5)
+   Main PID: 649 (sshd)
+      Tasks: 1 (limit: 10668)
+     Memory: 9.3M (peak: 14.4M)
+        CPU: 1.112s
+     CGroup: /system.slice/sshd.service
+             └─649 "sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups"
+# /usr/lib/systemd/system/httpd.service
+# See httpd.service(8) for more information on using the httpd service.
+
+# Modifying this file in-place is not recommended, because changes
+# will be overwritten during package upgrades.  To customize the
+# behaviour, run "systemctl edit httpd" to create an override unit.
+
+# For example, to pass additional options (such as -D definitions) to
+# the httpd binary at startup, create an override unit (as is done by
+# systemctl edit) and enter the following:
+
+#	[Service]
+#	Environment=OPTIONS=-DMY_DEFINE
+
+[Unit]
+Description=The Apache HTTP Server
+Wants=httpd-init.service
+After=network.target remote-fs.target nss-lookup.target httpd-init.service
+Documentation=man:httpd.service(8)
+
+[Service]
+Type=notify
+Environment=LANG=C
+
+ExecStart=/usr/sbin/httpd $OPTIONS -DFOREGROUND
+ExecReload=/usr/sbin/httpd $OPTIONS -k graceful
+# Send SIGWINCH for graceful stop
+KillSignal=SIGWINCH
+KillMode=mixed
+PrivateTmp=true
+OOMPolicy=continue
+
+[Install]
+WantedBy=multi-user.target
+Done
+Starting KWASU service check...
+NAME="CentOS Stream"
+VERSION="9"
+ID="centos"
+ID_LIKE="rhel fedora"
+VERSION_ID="9"
+PLATFORM_ID="platform:el9"
+PRETTY_NAME="CentOS Stream 9"
+ANSI_COLOR="0;31"
+LOGO="fedora-logo-icon"
+CPE_NAME="cpe:/o:centos:centos:9"
+HOME_URL="https://centos.org/"
+BUG_REPORT_URL="https://issues.redhat.com/"
+REDHAT_SUPPORT_PRODUCT="Red Hat Enterprise Linux 9"
+REDHAT_SUPPORT_PRODUCT_VERSION="CentOS Stream"
+● httpd.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; preset: disabled)
+     Active: active (running) since Sat 2026-05-02 20:30:54 UTC; 622ms ago
+       Docs: man:httpd.service(8)
+   Main PID: 21667 (httpd)
+     Status: "Started, listening on: port 80"
+      Tasks: 177 (limit: 10668)
+     Memory: 13.5M (peak: 13.8M)
+        CPU: 106ms
+     CGroup: /system.slice/httpd.service
+             ├─21667 /usr/sbin/httpd -DFOREGROUND
+             ├─21668 /usr/sbin/httpd -DFOREGROUND
+             ├─21669 /usr/sbin/httpd -DFOREGROUND
+             ├─21670 /usr/sbin/httpd -DFOREGROUND
+             └─21671 /usr/sbin/httpd -DFOREGROUND
+active
+enabled
+● sshd.service - OpenSSH server daemon
+     Loaded: loaded (/usr/lib/systemd/system/sshd.service; enabled; preset: enabled)
+     Active: active (running) since Sat 2026-05-02 19:58:48 UTC; 32min ago
+       Docs: man:sshd(8)
+             man:sshd_config(5)
+   Main PID: 649 (sshd)
+      Tasks: 1 (limit: 10668)
+     Memory: 9.3M (peak: 14.4M)
+        CPU: 1.112s
+     CGroup: /system.slice/sshd.service
+             └─649 "sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups"
+# /usr/lib/systemd/system/httpd.service
+# See httpd.service(8) for more information on using the httpd service.
+
+# Modifying this file in-place is not recommended, because changes
+# will be overwritten during package upgrades.  To customize the
+# behaviour, run "systemctl edit httpd" to create an override unit.
+
+# For example, to pass additional options (such as -D definitions) to
+# the httpd binary at startup, create an override unit (as is done by
+# systemctl edit) and enter the following:
+
+#	[Service]
+#	Environment=OPTIONS=-DMY_DEFINE
+
+[Unit]
+Description=The Apache HTTP Server
+Wants=httpd-init.service
+After=network.target remote-fs.target nss-lookup.target httpd-init.service
+Documentation=man:httpd.service(8)
+
+[Service]
+Type=notify
+Environment=LANG=C
+
+ExecStart=/usr/sbin/httpd $OPTIONS -DFOREGROUND
+ExecReload=/usr/sbin/httpd $OPTIONS -k graceful
+# Send SIGWINCH for graceful stop
+KillSignal=SIGWINCH
+KillMode=mixed
+PrivateTmp=true
+OOMPolicy=continue
+
+[Install]
+WantedBy=multi-user.target
+Done
+Starting KWASU service check...
+NAME="CentOS Stream"
+VERSION="9"
+ID="centos"
+ID_LIKE="rhel fedora"
+VERSION_ID="9"
+PLATFORM_ID="platform:el9"
+PRETTY_NAME="CentOS Stream 9"
+ANSI_COLOR="0;31"
+LOGO="fedora-logo-icon"
+CPE_NAME="cpe:/o:centos:centos:9"
+HOME_URL="https://centos.org/"
+BUG_REPORT_URL="https://issues.redhat.com/"
+REDHAT_SUPPORT_PRODUCT="Red Hat Enterprise Linux 9"
+REDHAT_SUPPORT_PRODUCT_VERSION="CentOS Stream"
+● httpd.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; preset: disabled)
+     Active: active (running) since Sat 2026-05-02 20:30:57 UTC; 569ms ago
+       Docs: man:httpd.service(8)
+   Main PID: 21898 (httpd)
+     Status: "Started, listening on: port 80"
+      Tasks: 177 (limit: 10668)
+     Memory: 13.5M (peak: 13.8M)
+        CPU: 104ms
+     CGroup: /system.slice/httpd.service
+             ├─21898 /usr/sbin/httpd -DFOREGROUND
+             ├─21899 /usr/sbin/httpd -DFOREGROUND
+             ├─21900 /usr/sbin/httpd -DFOREGROUND
+             ├─21901 /usr/sbin/httpd -DFOREGROUND
+             └─21902 /usr/sbin/httpd -DFOREGROUND
+active
+enabled
+● sshd.service - OpenSSH server daemon
+     Loaded: loaded (/usr/lib/systemd/system/sshd.service; enabled; preset: enabled)
+     Active: active (running) since Sat 2026-05-02 19:58:48 UTC; 32min ago
+       Docs: man:sshd(8)
+             man:sshd_config(5)
+   Main PID: 649 (sshd)
+      Tasks: 1 (limit: 10668)
+     Memory: 9.3M (peak: 14.4M)
+        CPU: 1.112s
+     CGroup: /system.slice/sshd.service
+             └─649 "sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups"
+# /usr/lib/systemd/system/httpd.service
+# See httpd.service(8) for more information on using the httpd service.
+
+# Modifying this file in-place is not recommended, because changes
+# will be overwritten during package upgrades.  To customize the
+# behaviour, run "systemctl edit httpd" to create an override unit.
+
+# For example, to pass additional options (such as -D definitions) to
+# the httpd binary at startup, create an override unit (as is done by
+# systemctl edit) and enter the following:
+
+#	[Service]
+#	Environment=OPTIONS=-DMY_DEFINE
+
+[Unit]
+Description=The Apache HTTP Server
+Wants=httpd-init.service
+After=network.target remote-fs.target nss-lookup.target httpd-init.service
+Documentation=man:httpd.service(8)
+
+[Service]
+Type=notify
+Environment=LANG=C
+
+ExecStart=/usr/sbin/httpd $OPTIONS -DFOREGROUND
+ExecReload=/usr/sbin/httpd $OPTIONS -k graceful
+# Send SIGWINCH for graceful stop
+KillSignal=SIGWINCH
+KillMode=mixed
+PrivateTmp=true
+OOMPolicy=continue
+
+[Install]
+WantedBy=multi-user.target
+Done
+Starting KWASU service check...
+NAME="CentOS Stream"
+VERSION="9"
+ID="centos"
+ID_LIKE="rhel fedora"
+VERSION_ID="9"
+PLATFORM_ID="platform:el9"
+PRETTY_NAME="CentOS Stream 9"
+ANSI_COLOR="0;31"
+LOGO="fedora-logo-icon"
+CPE_NAME="cpe:/o:centos:centos:9"
+HOME_URL="https://centos.org/"
+BUG_REPORT_URL="https://issues.redhat.com/"
+REDHAT_SUPPORT_PRODUCT="Red Hat Enterprise Linux 9"
+REDHAT_SUPPORT_PRODUCT_VERSION="CentOS Stream"
+● httpd.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; preset: disabled)
+     Active: active (running) since Sat 2026-05-02 20:30:59 UTC; 584ms ago
+       Docs: man:httpd.service(8)
+   Main PID: 22129 (httpd)
+     Status: "Started, listening on: port 80"
+      Tasks: 177 (limit: 10668)
+     Memory: 13.5M (peak: 13.8M)
+        CPU: 97ms
+     CGroup: /system.slice/httpd.service
+             ├─22129 /usr/sbin/httpd -DFOREGROUND
+             ├─22130 /usr/sbin/httpd -DFOREGROUND
+             ├─22131 /usr/sbin/httpd -DFOREGROUND
+             ├─22132 /usr/sbin/httpd -DFOREGROUND
+             └─22133 /usr/sbin/httpd -DFOREGROUND
+active
+enabled
+● sshd.service - OpenSSH server daemon
+     Loaded: loaded (/usr/lib/systemd/system/sshd.service; enabled; preset: enabled)
+     Active: active (running) since Sat 2026-05-02 19:58:48 UTC; 32min ago
+       Docs: man:sshd(8)
+             man:sshd_config(5)
+   Main PID: 649 (sshd)
+      Tasks: 1 (limit: 10668)
+     Memory: 9.3M (peak: 14.4M)
+        CPU: 1.112s
+     CGroup: /system.slice/sshd.service
+             └─649 "sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups"
+# /usr/lib/systemd/system/httpd.service
+# See httpd.service(8) for more information on using the httpd service.
+
+# Modifying this file in-place is not recommended, because changes
+# will be overwritten during package upgrades.  To customize the
+# behaviour, run "systemctl edit httpd" to create an override unit.
+
+# For example, to pass additional options (such as -D definitions) to
+# the httpd binary at startup, create an override unit (as is done by
+# systemctl edit) and enter the following:
+
+#	[Service]
+#	Environment=OPTIONS=-DMY_DEFINE
+
+[Unit]
+Description=The Apache HTTP Server
+Wants=httpd-init.service
+After=network.target remote-fs.target nss-lookup.target httpd-init.service
+Documentation=man:httpd.service(8)
+
+[Service]
+Type=notify
+Environment=LANG=C
+
+ExecStart=/usr/sbin/httpd $OPTIONS -DFOREGROUND
+ExecReload=/usr/sbin/httpd $OPTIONS -k graceful
+# Send SIGWINCH for graceful stop
+KillSignal=SIGWINCH
+KillMode=mixed
+PrivateTmp=true
+OOMPolicy=continue
+
+[Install]
+WantedBy=multi-user.target
+Done
+Starting KWASU service check...
+NAME="CentOS Stream"
+VERSION="9"
+ID="centos"
+ID_LIKE="rhel fedora"
+VERSION_ID="9"
+PLATFORM_ID="platform:el9"
+PRETTY_NAME="CentOS Stream 9"
+ANSI_COLOR="0;31"
+LOGO="fedora-logo-icon"
+CPE_NAME="cpe:/o:centos:centos:9"
+HOME_URL="https://centos.org/"
+BUG_REPORT_URL="https://issues.redhat.com/"
+REDHAT_SUPPORT_PRODUCT="Red Hat Enterprise Linux 9"
+REDHAT_SUPPORT_PRODUCT_VERSION="CentOS Stream"
+● httpd.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; preset: disabled)
+     Active: active (running) since Sat 2026-05-02 20:31:01 UTC; 586ms ago
+       Docs: man:httpd.service(8)
+   Main PID: 22360 (httpd)
+     Status: "Started, listening on: port 80"
+      Tasks: 177 (limit: 10668)
+     Memory: 13.5M (peak: 13.7M)
+        CPU: 107ms
+     CGroup: /system.slice/httpd.service
+             ├─22360 /usr/sbin/httpd -DFOREGROUND
+             ├─22361 /usr/sbin/httpd -DFOREGROUND
+             ├─22362 /usr/sbin/httpd -DFOREGROUND
+             ├─22363 /usr/sbin/httpd -DFOREGROUND
+             └─22364 /usr/sbin/httpd -DFOREGROUND
+active
+enabled
+● sshd.service - OpenSSH server daemon
+     Loaded: loaded (/usr/lib/systemd/system/sshd.service; enabled; preset: enabled)
+     Active: active (running) since Sat 2026-05-02 19:58:48 UTC; 32min ago
+       Docs: man:sshd(8)
+             man:sshd_config(5)
+   Main PID: 649 (sshd)
+      Tasks: 1 (limit: 10668)
+     Memory: 9.3M (peak: 14.4M)
+        CPU: 1.112s
+     CGroup: /system.slice/sshd.service
+             └─649 "sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups"
+# /usr/lib/systemd/system/httpd.service
+# See httpd.service(8) for more information on using the httpd service.
+
+# Modifying this file in-place is not recommended, because changes
+# will be overwritten during package upgrades.  To customize the
+# behaviour, run "systemctl edit httpd" to create an override unit.
+
+# For example, to pass additional options (such as -D definitions) to
+# the httpd binary at startup, create an override unit (as is done by
+# systemctl edit) and enter the following:
+
+#	[Service]
+#	Environment=OPTIONS=-DMY_DEFINE
+
+[Unit]
+Description=The Apache HTTP Server
+Wants=httpd-init.service
+After=network.target remote-fs.target nss-lookup.target httpd-init.service
+Documentation=man:httpd.service(8)
+
+[Service]
+Type=notify
+Environment=LANG=C
+
+ExecStart=/usr/sbin/httpd $OPTIONS -DFOREGROUND
+ExecReload=/usr/sbin/httpd $OPTIONS -k graceful
+# Send SIGWINCH for graceful stop
+KillSignal=SIGWINCH
+KillMode=mixed
+PrivateTmp=true
+OOMPolicy=continue
+
+[Install]
+WantedBy=multi-user.target
+Done
+Starting KWASU service check...
+NAME="CentOS Stream"
+VERSION="9"
+ID="centos"
+ID_LIKE="rhel fedora"
+VERSION_ID="9"
+PLATFORM_ID="platform:el9"
+PRETTY_NAME="CentOS Stream 9"
+ANSI_COLOR="0;31"
+LOGO="fedora-logo-icon"
+CPE_NAME="cpe:/o:centos:centos:9"
+HOME_URL="https://centos.org/"
+BUG_REPORT_URL="https://issues.redhat.com/"
+REDHAT_SUPPORT_PRODUCT="Red Hat Enterprise Linux 9"
+REDHAT_SUPPORT_PRODUCT_VERSION="CentOS Stream"
+● httpd.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; preset: disabled)
+     Active: active (running) since Sat 2026-05-02 20:31:04 UTC; 565ms ago
+       Docs: man:httpd.service(8)
+   Main PID: 22591 (httpd)
+     Status: "Started, listening on: port 80"
+      Tasks: 177 (limit: 10668)
+     Memory: 13.5M (peak: 13.7M)
+        CPU: 144ms
+     CGroup: /system.slice/httpd.service
+             ├─22591 /usr/sbin/httpd -DFOREGROUND
+             ├─22592 /usr/sbin/httpd -DFOREGROUND
+             ├─22593 /usr/sbin/httpd -DFOREGROUND
+             ├─22594 /usr/sbin/httpd -DFOREGROUND
+             └─22595 /usr/sbin/httpd -DFOREGROUND
+active
+enabled
+● sshd.service - OpenSSH server daemon
+     Loaded: loaded (/usr/lib/systemd/system/sshd.service; enabled; preset: enabled)
+     Active: active (running) since Sat 2026-05-02 19:58:48 UTC; 32min ago
+       Docs: man:sshd(8)
+             man:sshd_config(5)
+   Main PID: 649 (sshd)
+      Tasks: 1 (limit: 10668)
+     Memory: 9.3M (peak: 14.4M)
+        CPU: 1.112s
+     CGroup: /system.slice/sshd.service
+             └─649 "sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups"
+# /usr/lib/systemd/system/httpd.service
+# See httpd.service(8) for more information on using the httpd service.
+
+# Modifying this file in-place is not recommended, because changes
+# will be overwritten during package upgrades.  To customize the
+# behaviour, run "systemctl edit httpd" to create an override unit.
+
+# For example, to pass additional options (such as -D definitions) to
+# the httpd binary at startup, create an override unit (as is done by
+# systemctl edit) and enter the following:
+
+#	[Service]
+#	Environment=OPTIONS=-DMY_DEFINE
+
+[Unit]
+Description=The Apache HTTP Server
+Wants=httpd-init.service
+After=network.target remote-fs.target nss-lookup.target httpd-init.service
+Documentation=man:httpd.service(8)
+
+[Service]
+Type=notify
+Environment=LANG=C
+
+ExecStart=/usr/sbin/httpd $OPTIONS -DFOREGROUND
+ExecReload=/usr/sbin/httpd $OPTIONS -k graceful
+# Send SIGWINCH for graceful stop
+KillSignal=SIGWINCH
+KillMode=mixed
+PrivateTmp=true
+OOMPolicy=continue
+
+[Install]
+WantedBy=multi-user.target
+Done
+Starting KWASU service check...
+NAME="CentOS Stream"
+VERSION="9"
+ID="centos"
+ID_LIKE="rhel fedora"
+VERSION_ID="9"
+PLATFORM_ID="platform:el9"
+PRETTY_NAME="CentOS Stream 9"
+ANSI_COLOR="0;31"
+LOGO="fedora-logo-icon"
+CPE_NAME="cpe:/o:centos:centos:9"
+HOME_URL="https://centos.org/"
+BUG_REPORT_URL="https://issues.redhat.com/"
+REDHAT_SUPPORT_PRODUCT="Red Hat Enterprise Linux 9"
+REDHAT_SUPPORT_PRODUCT_VERSION="CentOS Stream"
+● httpd.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; preset: disabled)
+     Active: active (running) since Sat 2026-05-02 20:31:06 UTC; 523ms ago
+       Docs: man:httpd.service(8)
+   Main PID: 22822 (httpd)
+     Status: "Started, listening on: port 80"
+      Tasks: 177 (limit: 10668)
+     Memory: 13.5M (peak: 13.7M)
+        CPU: 102ms
+     CGroup: /system.slice/httpd.service
+             ├─22822 /usr/sbin/httpd -DFOREGROUND
+             ├─22823 /usr/sbin/httpd -DFOREGROUND
+             ├─22824 /usr/sbin/httpd -DFOREGROUND
+             ├─22825 /usr/sbin/httpd -DFOREGROUND
+             └─22826 /usr/sbin/httpd -DFOREGROUND
+active
+enabled
+● sshd.service - OpenSSH server daemon
+     Loaded: loaded (/usr/lib/systemd/system/sshd.service; enabled; preset: enabled)
+     Active: active (running) since Sat 2026-05-02 19:58:48 UTC; 32min ago
+       Docs: man:sshd(8)
+             man:sshd_config(5)
+   Main PID: 649 (sshd)
+      Tasks: 1 (limit: 10668)
+     Memory: 9.3M (peak: 14.4M)
+        CPU: 1.112s
+     CGroup: /system.slice/sshd.service
+             └─649 "sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups"
+# /usr/lib/systemd/system/httpd.service
+# See httpd.service(8) for more information on using the httpd service.
+
+# Modifying this file in-place is not recommended, because changes
+# will be overwritten during package upgrades.  To customize the
+# behaviour, run "systemctl edit httpd" to create an override unit.
+
+# For example, to pass additional options (such as -D definitions) to
+# the httpd binary at startup, create an override unit (as is done by
+# systemctl edit) and enter the following:
+
+#	[Service]
+#	Environment=OPTIONS=-DMY_DEFINE
+
+[Unit]
+Description=The Apache HTTP Server
+Wants=httpd-init.service
+After=network.target remote-fs.target nss-lookup.target httpd-init.service
+Documentation=man:httpd.service(8)
+
+[Service]
+Type=notify
+Environment=LANG=C
+
+ExecStart=/usr/sbin/httpd $OPTIONS -DFOREGROUND
+ExecReload=/usr/sbin/httpd $OPTIONS -k graceful
+# Send SIGWINCH for graceful stop
+KillSignal=SIGWINCH
+KillMode=mixed
+PrivateTmp=true
+OOMPolicy=continue
+
+[Install]
+WantedBy=multi-user.target
+Done
+Starting KWASU service check...
+NAME="CentOS Stream"
+VERSION="9"
+ID="centos"
+ID_LIKE="rhel fedora"
+VERSION_ID="9"
+PLATFORM_ID="platform:el9"
+PRETTY_NAME="CentOS Stream 9"
+ANSI_COLOR="0;31"
+LOGO="fedora-logo-icon"
+CPE_NAME="cpe:/o:centos:centos:9"
+HOME_URL="https://centos.org/"
+BUG_REPORT_URL="https://issues.redhat.com/"
+REDHAT_SUPPORT_PRODUCT="Red Hat Enterprise Linux 9"
+REDHAT_SUPPORT_PRODUCT_VERSION="CentOS Stream"
+● httpd.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; preset: disabled)
+     Active: active (running) since Sat 2026-05-02 20:31:08 UTC; 562ms ago
+       Docs: man:httpd.service(8)
+   Main PID: 23053 (httpd)
+     Status: "Started, listening on: port 80"
+      Tasks: 177 (limit: 10668)
+     Memory: 13.5M (peak: 13.8M)
+        CPU: 103ms
+     CGroup: /system.slice/httpd.service
+             ├─23053 /usr/sbin/httpd -DFOREGROUND
+             ├─23054 /usr/sbin/httpd -DFOREGROUND
+             ├─23055 /usr/sbin/httpd -DFOREGROUND
+             ├─23056 /usr/sbin/httpd -DFOREGROUND
+             └─23057 /usr/sbin/httpd -DFOREGROUND
+active
+enabled
+● sshd.service - OpenSSH server daemon
+     Loaded: loaded (/usr/lib/systemd/system/sshd.service; enabled; preset: enabled)
+     Active: active (running) since Sat 2026-05-02 19:58:48 UTC; 32min ago
+       Docs: man:sshd(8)
+             man:sshd_config(5)
+   Main PID: 649 (sshd)
+      Tasks: 1 (limit: 10668)
+     Memory: 9.3M (peak: 14.4M)
+        CPU: 1.112s
+     CGroup: /system.slice/sshd.service
+             └─649 "sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups"
+# /usr/lib/systemd/system/httpd.service
+# See httpd.service(8) for more information on using the httpd service.
+
+# Modifying this file in-place is not recommended, because changes
+# will be overwritten during package upgrades.  To customize the
+# behaviour, run "systemctl edit httpd" to create an override unit.
+
+# For example, to pass additional options (such as -D definitions) to
+# the httpd binary at startup, create an override unit (as is done by
+# systemctl edit) and enter the following:
+
+#	[Service]
+#	Environment=OPTIONS=-DMY_DEFINE
+
+[Unit]
+Description=The Apache HTTP Server
+Wants=httpd-init.service
+After=network.target remote-fs.target nss-lookup.target httpd-init.service
+Documentation=man:httpd.service(8)
+
+[Service]
+Type=notify
+Environment=LANG=C
+
+ExecStart=/usr/sbin/httpd $OPTIONS -DFOREGROUND
+ExecReload=/usr/sbin/httpd $OPTIONS -k graceful
+# Send SIGWINCH for graceful stop
+KillSignal=SIGWINCH
+KillMode=mixed
+PrivateTmp=true
+OOMPolicy=continue
+
+[Install]
+WantedBy=multi-user.target
+Done
+Starting KWASU service check...
+NAME="CentOS Stream"
+VERSION="9"
+ID="centos"
+ID_LIKE="rhel fedora"
+VERSION_ID="9"
+PLATFORM_ID="platform:el9"
+PRETTY_NAME="CentOS Stream 9"
+ANSI_COLOR="0;31"
+LOGO="fedora-logo-icon"
+CPE_NAME="cpe:/o:centos:centos:9"
+HOME_URL="https://centos.org/"
+BUG_REPORT_URL="https://issues.redhat.com/"
+REDHAT_SUPPORT_PRODUCT="Red Hat Enterprise Linux 9"
+REDHAT_SUPPORT_PRODUCT_VERSION="CentOS Stream"
+● httpd.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; preset: disabled)
+     Active: active (running) since Sat 2026-05-02 20:31:11 UTC; 567ms ago
+       Docs: man:httpd.service(8)
+   Main PID: 23284 (httpd)
+     Status: "Started, listening on: port 80"
+      Tasks: 177 (limit: 10668)
+     Memory: 13.5M (peak: 13.7M)
+        CPU: 101ms
+     CGroup: /system.slice/httpd.service
+             ├─23284 /usr/sbin/httpd -DFOREGROUND
+             ├─23285 /usr/sbin/httpd -DFOREGROUND
+             ├─23286 /usr/sbin/httpd -DFOREGROUND
+             ├─23288 /usr/sbin/httpd -DFOREGROUND
+             └─23289 /usr/sbin/httpd -DFOREGROUND
+active
+enabled
+● sshd.service - OpenSSH server daemon
+     Loaded: loaded (/usr/lib/systemd/system/sshd.service; enabled; preset: enabled)
+     Active: active (running) since Sat 2026-05-02 19:58:48 UTC; 32min ago
+       Docs: man:sshd(8)
+             man:sshd_config(5)
+   Main PID: 649 (sshd)
+      Tasks: 1 (limit: 10668)
+     Memory: 9.3M (peak: 14.4M)
+        CPU: 1.112s
+     CGroup: /system.slice/sshd.service
+             └─649 "sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups"
+# /usr/lib/systemd/system/httpd.service
+# See httpd.service(8) for more information on using the httpd service.
+
+# Modifying this file in-place is not recommended, because changes
+# will be overwritten during package upgrades.  To customize the
+# behaviour, run "systemctl edit httpd" to create an override unit.
+
+# For example, to pass additional options (such as -D definitions) to
+# the httpd binary at startup, create an override unit (as is done by
+# systemctl edit) and enter the following:
+
+#	[Service]
+#	Environment=OPTIONS=-DMY_DEFINE
+
+[Unit]
+Description=The Apache HTTP Server
+Wants=httpd-init.service
+After=network.target remote-fs.target nss-lookup.target httpd-init.service
+Documentation=man:httpd.service(8)
+
+[Service]
+Type=notify
+Environment=LANG=C
+
+ExecStart=/usr/sbin/httpd $OPTIONS -DFOREGROUND
+ExecReload=/usr/sbin/httpd $OPTIONS -k graceful
+# Send SIGWINCH for graceful stop
+KillSignal=SIGWINCH
+KillMode=mixed
+PrivateTmp=true
+OOMPolicy=continue
+
+[Install]
+WantedBy=multi-user.target
+Done
+Starting KWASU service check...
+NAME="CentOS Stream"
+VERSION="9"
+ID="centos"
+ID_LIKE="rhel fedora"
+VERSION_ID="9"
+PLATFORM_ID="platform:el9"
+PRETTY_NAME="CentOS Stream 9"
+ANSI_COLOR="0;31"
+LOGO="fedora-logo-icon"
+CPE_NAME="cpe:/o:centos:centos:9"
+HOME_URL="https://centos.org/"
+BUG_REPORT_URL="https://issues.redhat.com/"
+REDHAT_SUPPORT_PRODUCT="Red Hat Enterprise Linux 9"
+REDHAT_SUPPORT_PRODUCT_VERSION="CentOS Stream"
+● httpd.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; preset: disabled)
+     Active: active (running) since Sat 2026-05-02 20:31:13 UTC; 648ms ago
+       Docs: man:httpd.service(8)
+   Main PID: 23515 (httpd)
+     Status: "Started, listening on: port 80"
+      Tasks: 177 (limit: 10668)
+     Memory: 13.5M (peak: 13.6M)
+        CPU: 97ms
+     CGroup: /system.slice/httpd.service
+             ├─23515 /usr/sbin/httpd -DFOREGROUND
+             ├─23516 /usr/sbin/httpd -DFOREGROUND
+             ├─23517 /usr/sbin/httpd -DFOREGROUND
+             ├─23518 /usr/sbin/httpd -DFOREGROUND
+             └─23520 /usr/sbin/httpd -DFOREGROUND
+active
+enabled
+● sshd.service - OpenSSH server daemon
+     Loaded: loaded (/usr/lib/systemd/system/sshd.service; enabled; preset: enabled)
+     Active: active (running) since Sat 2026-05-02 19:58:48 UTC; 32min ago
+       Docs: man:sshd(8)
+             man:sshd_config(5)
+   Main PID: 649 (sshd)
+      Tasks: 1 (limit: 10668)
+     Memory: 9.3M (peak: 14.4M)
+        CPU: 1.112s
+     CGroup: /system.slice/sshd.service
+             └─649 "sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups"
+# /usr/lib/systemd/system/httpd.service
+# See httpd.service(8) for more information on using the httpd service.
+
+# Modifying this file in-place is not recommended, because changes
+# will be overwritten during package upgrades.  To customize the
+# behaviour, run "systemctl edit httpd" to create an override unit.
+
+# For example, to pass additional options (such as -D definitions) to
+# the httpd binary at startup, create an override unit (as is done by
+# systemctl edit) and enter the following:
+
+#	[Service]
+#	Environment=OPTIONS=-DMY_DEFINE
+
+[Unit]
+Description=The Apache HTTP Server
+Wants=httpd-init.service
+After=network.target remote-fs.target nss-lookup.target httpd-init.service
+Documentation=man:httpd.service(8)
+
+[Service]
+Type=notify
+Environment=LANG=C
+
+ExecStart=/usr/sbin/httpd $OPTIONS -DFOREGROUND
+ExecReload=/usr/sbin/httpd $OPTIONS -k graceful
+# Send SIGWINCH for graceful stop
+KillSignal=SIGWINCH
+KillMode=mixed
+PrivateTmp=true
+OOMPolicy=continue
+
+[Install]
+WantedBy=multi-user.target
+Done
+Starting KWASU service check...
+NAME="CentOS Stream"
+VERSION="9"
+ID="centos"
+ID_LIKE="rhel fedora"
+VERSION_ID="9"
+PLATFORM_ID="platform:el9"
+PRETTY_NAME="CentOS Stream 9"
+ANSI_COLOR="0;31"
+LOGO="fedora-logo-icon"
+CPE_NAME="cpe:/o:centos:centos:9"
+HOME_URL="https://centos.org/"
+BUG_REPORT_URL="https://issues.redhat.com/"
+REDHAT_SUPPORT_PRODUCT="Red Hat Enterprise Linux 9"
+REDHAT_SUPPORT_PRODUCT_VERSION="CentOS Stream"
+● httpd.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; preset: disabled)
+     Active: active (running) since Sat 2026-05-02 20:31:15 UTC; 536ms ago
+       Docs: man:httpd.service(8)
+   Main PID: 23746 (httpd)
+     Status: "Started, listening on: port 80"
+      Tasks: 177 (limit: 10668)
+     Memory: 13.5M (peak: 13.7M)
+        CPU: 90ms
+     CGroup: /system.slice/httpd.service
+             ├─23746 /usr/sbin/httpd -DFOREGROUND
+             ├─23747 /usr/sbin/httpd -DFOREGROUND
+             ├─23748 /usr/sbin/httpd -DFOREGROUND
+             ├─23749 /usr/sbin/httpd -DFOREGROUND
+             └─23750 /usr/sbin/httpd -DFOREGROUND
+active
+enabled
+● sshd.service - OpenSSH server daemon
+     Loaded: loaded (/usr/lib/systemd/system/sshd.service; enabled; preset: enabled)
+     Active: active (running) since Sat 2026-05-02 19:58:48 UTC; 32min ago
+       Docs: man:sshd(8)
+             man:sshd_config(5)
+   Main PID: 649 (sshd)
+      Tasks: 1 (limit: 10668)
+     Memory: 9.3M (peak: 14.4M)
+        CPU: 1.112s
+     CGroup: /system.slice/sshd.service
+             └─649 "sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups"
+# /usr/lib/systemd/system/httpd.service
+# See httpd.service(8) for more information on using the httpd service.
+
+# Modifying this file in-place is not recommended, because changes
+# will be overwritten during package upgrades.  To customize the
+# behaviour, run "systemctl edit httpd" to create an override unit.
+
+# For example, to pass additional options (such as -D definitions) to
+# the httpd binary at startup, create an override unit (as is done by
+# systemctl edit) and enter the following:
+
+#	[Service]
+#	Environment=OPTIONS=-DMY_DEFINE
+
+[Unit]
+Description=The Apache HTTP Server
+Wants=httpd-init.service
+After=network.target remote-fs.target nss-lookup.target httpd-init.service
+Documentation=man:httpd.service(8)
+
+[Service]
+Type=notify
+Environment=LANG=C
+
+ExecStart=/usr/sbin/httpd $OPTIONS -DFOREGROUND
+ExecReload=/usr/sbin/httpd $OPTIONS -k graceful
+# Send SIGWINCH for graceful stop
+KillSignal=SIGWINCH
+KillMode=mixed
+PrivateTmp=true
+OOMPolicy=continue
+
+[Install]
+WantedBy=multi-user.target
+Done
+Starting KWASU service check...
+NAME="CentOS Stream"
+VERSION="9"
+ID="centos"
+ID_LIKE="rhel fedora"
+VERSION_ID="9"
+PLATFORM_ID="platform:el9"
+PRETTY_NAME="CentOS Stream 9"
+ANSI_COLOR="0;31"
+LOGO="fedora-logo-icon"
+CPE_NAME="cpe:/o:centos:centos:9"
+HOME_URL="https://centos.org/"
+BUG_REPORT_URL="https://issues.redhat.com/"
+REDHAT_SUPPORT_PRODUCT="Red Hat Enterprise Linux 9"
+REDHAT_SUPPORT_PRODUCT_VERSION="CentOS Stream"
+● httpd.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; preset: disabled)
+     Active: active (running) since Sat 2026-05-02 20:31:18 UTC; 583ms ago
+       Docs: man:httpd.service(8)
+   Main PID: 23977 (httpd)
+     Status: "Started, listening on: port 80"
+      Tasks: 177 (limit: 10668)
+     Memory: 13.5M (peak: 13.7M)
+        CPU: 98ms
+     CGroup: /system.slice/httpd.service
+             ├─23977 /usr/sbin/httpd -DFOREGROUND
+             ├─23978 /usr/sbin/httpd -DFOREGROUND
+             ├─23979 /usr/sbin/httpd -DFOREGROUND
+             ├─23980 /usr/sbin/httpd -DFOREGROUND
+             └─23982 /usr/sbin/httpd -DFOREGROUND
+active
+enabled
+● sshd.service - OpenSSH server daemon
+     Loaded: loaded (/usr/lib/systemd/system/sshd.service; enabled; preset: enabled)
+     Active: active (running) since Sat 2026-05-02 19:58:48 UTC; 32min ago
+       Docs: man:sshd(8)
+             man:sshd_config(5)
+   Main PID: 649 (sshd)
+      Tasks: 1 (limit: 10668)
+     Memory: 9.3M (peak: 14.4M)
+        CPU: 1.112s
+     CGroup: /system.slice/sshd.service
+             └─649 "sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups"
+# /usr/lib/systemd/system/httpd.service
+# See httpd.service(8) for more information on using the httpd service.
+
+# Modifying this file in-place is not recommended, because changes
+# will be overwritten during package upgrades.  To customize the
+# behaviour, run "systemctl edit httpd" to create an override unit.
+
+# For example, to pass additional options (such as -D definitions) to
+# the httpd binary at startup, create an override unit (as is done by
+# systemctl edit) and enter the following:
+
+#	[Service]
+#	Environment=OPTIONS=-DMY_DEFINE
+
+[Unit]
+Description=The Apache HTTP Server
+Wants=httpd-init.service
+After=network.target remote-fs.target nss-lookup.target httpd-init.service
+Documentation=man:httpd.service(8)
+
+[Service]
+Type=notify
+Environment=LANG=C
+
+ExecStart=/usr/sbin/httpd $OPTIONS -DFOREGROUND
+ExecReload=/usr/sbin/httpd $OPTIONS -k graceful
+# Send SIGWINCH for graceful stop
+KillSignal=SIGWINCH
+KillMode=mixed
+PrivateTmp=true
+OOMPolicy=continue
+
+[Install]
+WantedBy=multi-user.target
+Done
+Starting KWASU service check...
+NAME="CentOS Stream"
+VERSION="9"
+ID="centos"
+ID_LIKE="rhel fedora"
+VERSION_ID="9"
+PLATFORM_ID="platform:el9"
+PRETTY_NAME="CentOS Stream 9"
+ANSI_COLOR="0;31"
+LOGO="fedora-logo-icon"
+CPE_NAME="cpe:/o:centos:centos:9"
+HOME_URL="https://centos.org/"
+BUG_REPORT_URL="https://issues.redhat.com/"
+REDHAT_SUPPORT_PRODUCT="Red Hat Enterprise Linux 9"
+REDHAT_SUPPORT_PRODUCT_VERSION="CentOS Stream"
+● httpd.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; preset: disabled)
+     Active: active (running) since Sat 2026-05-02 20:31:20 UTC; 573ms ago
+       Docs: man:httpd.service(8)
+   Main PID: 24208 (httpd)
+     Status: "Started, listening on: port 80"
+      Tasks: 177 (limit: 10668)
+     Memory: 13.5M (peak: 13.5M)
+        CPU: 105ms
+     CGroup: /system.slice/httpd.service
+             ├─24208 /usr/sbin/httpd -DFOREGROUND
+             ├─24209 /usr/sbin/httpd -DFOREGROUND
+             ├─24210 /usr/sbin/httpd -DFOREGROUND
+             ├─24211 /usr/sbin/httpd -DFOREGROUND
+             └─24212 /usr/sbin/httpd -DFOREGROUND
+active
+enabled
+● sshd.service - OpenSSH server daemon
+     Loaded: loaded (/usr/lib/systemd/system/sshd.service; enabled; preset: enabled)
+     Active: active (running) since Sat 2026-05-02 19:58:48 UTC; 32min ago
+       Docs: man:sshd(8)
+             man:sshd_config(5)
+   Main PID: 649 (sshd)
+      Tasks: 1 (limit: 10668)
+     Memory: 9.3M (peak: 14.4M)
+        CPU: 1.112s
+     CGroup: /system.slice/sshd.service
+             └─649 "sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups"
+# /usr/lib/systemd/system/httpd.service
+# See httpd.service(8) for more information on using the httpd service.
+
+# Modifying this file in-place is not recommended, because changes
+# will be overwritten during package upgrades.  To customize the
+# behaviour, run "systemctl edit httpd" to create an override unit.
+
+# For example, to pass additional options (such as -D definitions) to
+# the httpd binary at startup, create an override unit (as is done by
+# systemctl edit) and enter the following:
+
+#	[Service]
+#	Environment=OPTIONS=-DMY_DEFINE
+
+[Unit]
+Description=The Apache HTTP Server
+Wants=httpd-init.service
+After=network.target remote-fs.target nss-lookup.target httpd-init.service
+Documentation=man:httpd.service(8)
+
+[Service]
+Type=notify
+Environment=LANG=C
+
+ExecStart=/usr/sbin/httpd $OPTIONS -DFOREGROUND
+ExecReload=/usr/sbin/httpd $OPTIONS -k graceful
+# Send SIGWINCH for graceful stop
+KillSignal=SIGWINCH
+KillMode=mixed
+PrivateTmp=true
+OOMPolicy=continue
+
+[Install]
+WantedBy=multi-user.target
+Done
+Starting KWASU service check...
+NAME="CentOS Stream"
+VERSION="9"
+ID="centos"
+ID_LIKE="rhel fedora"
+VERSION_ID="9"
+PLATFORM_ID="platform:el9"
+PRETTY_NAME="CentOS Stream 9"
+ANSI_COLOR="0;31"
+LOGO="fedora-logo-icon"
+CPE_NAME="cpe:/o:centos:centos:9"
+HOME_URL="https://centos.org/"
+BUG_REPORT_URL="https://issues.redhat.com/"
+REDHAT_SUPPORT_PRODUCT="Red Hat Enterprise Linux 9"
+REDHAT_SUPPORT_PRODUCT_VERSION="CentOS Stream"
+● httpd.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; preset: disabled)
+     Active: active (running) since Sat 2026-05-02 20:31:22 UTC; 570ms ago
+       Docs: man:httpd.service(8)
+   Main PID: 24439 (httpd)
+     Status: "Started, listening on: port 80"
+      Tasks: 177 (limit: 10668)
+     Memory: 13.5M (peak: 13.8M)
+        CPU: 111ms
+     CGroup: /system.slice/httpd.service
+             ├─24439 /usr/sbin/httpd -DFOREGROUND
+             ├─24440 /usr/sbin/httpd -DFOREGROUND
+             ├─24441 /usr/sbin/httpd -DFOREGROUND
+             ├─24442 /usr/sbin/httpd -DFOREGROUND
+             └─24444 /usr/sbin/httpd -DFOREGROUND
+active
+enabled
+● sshd.service - OpenSSH server daemon
+     Loaded: loaded (/usr/lib/systemd/system/sshd.service; enabled; preset: enabled)
+     Active: active (running) since Sat 2026-05-02 19:58:48 UTC; 32min ago
+       Docs: man:sshd(8)
+             man:sshd_config(5)
+   Main PID: 649 (sshd)
+      Tasks: 1 (limit: 10668)
+     Memory: 9.3M (peak: 14.4M)
+        CPU: 1.112s
+     CGroup: /system.slice/sshd.service
+             └─649 "sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups"
+# /usr/lib/systemd/system/httpd.service
+# See httpd.service(8) for more information on using the httpd service.
+
+# Modifying this file in-place is not recommended, because changes
+# will be overwritten during package upgrades.  To customize the
+# behaviour, run "systemctl edit httpd" to create an override unit.
+
+# For example, to pass additional options (such as -D definitions) to
+# the httpd binary at startup, create an override unit (as is done by
+# systemctl edit) and enter the following:
+
+#	[Service]
+#	Environment=OPTIONS=-DMY_DEFINE
+
+[Unit]
+Description=The Apache HTTP Server
+Wants=httpd-init.service
+After=network.target remote-fs.target nss-lookup.target httpd-init.service
+Documentation=man:httpd.service(8)
+
+[Service]
+Type=notify
+Environment=LANG=C
+
+ExecStart=/usr/sbin/httpd $OPTIONS -DFOREGROUND
+ExecReload=/usr/sbin/httpd $OPTIONS -k graceful
+# Send SIGWINCH for graceful stop
+KillSignal=SIGWINCH
+KillMode=mixed
+PrivateTmp=true
+OOMPolicy=continue
+
+[Install]
+WantedBy=multi-user.target
+Done
+Starting KWASU service check...
+NAME="CentOS Stream"
+VERSION="9"
+ID="centos"
+ID_LIKE="rhel fedora"
+VERSION_ID="9"
+PLATFORM_ID="platform:el9"
+PRETTY_NAME="CentOS Stream 9"
+ANSI_COLOR="0;31"
+LOGO="fedora-logo-icon"
+CPE_NAME="cpe:/o:centos:centos:9"
+HOME_URL="https://centos.org/"
+BUG_REPORT_URL="https://issues.redhat.com/"
+REDHAT_SUPPORT_PRODUCT="Red Hat Enterprise Linux 9"
+REDHAT_SUPPORT_PRODUCT_VERSION="CentOS Stream"
+● httpd.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; preset: disabled)
+     Active: active (running) since Sat 2026-05-02 20:31:25 UTC; 545ms ago
+       Docs: man:httpd.service(8)
+   Main PID: 24670 (httpd)
+     Status: "Started, listening on: port 80"
+      Tasks: 177 (limit: 10668)
+     Memory: 13.5M (peak: 13.9M)
+        CPU: 103ms
+     CGroup: /system.slice/httpd.service
+             ├─24670 /usr/sbin/httpd -DFOREGROUND
+             ├─24671 /usr/sbin/httpd -DFOREGROUND
+             ├─24672 /usr/sbin/httpd -DFOREGROUND
+             ├─24673 /usr/sbin/httpd -DFOREGROUND
+             └─24674 /usr/sbin/httpd -DFOREGROUND
+active
+enabled
+● sshd.service - OpenSSH server daemon
+     Loaded: loaded (/usr/lib/systemd/system/sshd.service; enabled; preset: enabled)
+     Active: active (running) since Sat 2026-05-02 19:58:48 UTC; 32min ago
+       Docs: man:sshd(8)
+             man:sshd_config(5)
+   Main PID: 649 (sshd)
+      Tasks: 1 (limit: 10668)
+     Memory: 9.3M (peak: 14.4M)
+        CPU: 1.112s
+     CGroup: /system.slice/sshd.service
+             └─649 "sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups"
+# /usr/lib/systemd/system/httpd.service
+# See httpd.service(8) for more information on using the httpd service.
+
+# Modifying this file in-place is not recommended, because changes
+# will be overwritten during package upgrades.  To customize the
+# behaviour, run "systemctl edit httpd" to create an override unit.
+
+# For example, to pass additional options (such as -D definitions) to
+# the httpd binary at startup, create an override unit (as is done by
+# systemctl edit) and enter the following:
+
+#	[Service]
+#	Environment=OPTIONS=-DMY_DEFINE
+
+[Unit]
+Description=The Apache HTTP Server
+Wants=httpd-init.service
+After=network.target remote-fs.target nss-lookup.target httpd-init.service
+Documentation=man:httpd.service(8)
+
+[Service]
+Type=notify
+Environment=LANG=C
+
+ExecStart=/usr/sbin/httpd $OPTIONS -DFOREGROUND
+ExecReload=/usr/sbin/httpd $OPTIONS -k graceful
+# Send SIGWINCH for graceful stop
+KillSignal=SIGWINCH
+KillMode=mixed
+PrivateTmp=true
+OOMPolicy=continue
+
+[Install]
+WantedBy=multi-user.target
+Done
+Starting KWASU service check...
+NAME="CentOS Stream"
+VERSION="9"
+ID="centos"
+ID_LIKE="rhel fedora"
+VERSION_ID="9"
+PLATFORM_ID="platform:el9"
+PRETTY_NAME="CentOS Stream 9"
+ANSI_COLOR="0;31"
+LOGO="fedora-logo-icon"
+CPE_NAME="cpe:/o:centos:centos:9"
+HOME_URL="https://centos.org/"
+BUG_REPORT_URL="https://issues.redhat.com/"
+REDHAT_SUPPORT_PRODUCT="Red Hat Enterprise Linux 9"
+REDHAT_SUPPORT_PRODUCT_VERSION="CentOS Stream"
+● httpd.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; preset: disabled)
+     Active: active (running) since Sat 2026-05-02 20:31:27 UTC; 586ms ago
+       Docs: man:httpd.service(8)
+   Main PID: 24901 (httpd)
+     Status: "Started, listening on: port 80"
+      Tasks: 177 (limit: 10668)
+     Memory: 13.5M (peak: 13.7M)
+        CPU: 115ms
+     CGroup: /system.slice/httpd.service
+             ├─24901 /usr/sbin/httpd -DFOREGROUND
+             ├─24902 /usr/sbin/httpd -DFOREGROUND
+             ├─24903 /usr/sbin/httpd -DFOREGROUND
+             ├─24904 /usr/sbin/httpd -DFOREGROUND
+             └─24905 /usr/sbin/httpd -DFOREGROUND
+active
+enabled
+● sshd.service - OpenSSH server daemon
+     Loaded: loaded (/usr/lib/systemd/system/sshd.service; enabled; preset: enabled)
+     Active: active (running) since Sat 2026-05-02 19:58:48 UTC; 32min ago
+       Docs: man:sshd(8)
+             man:sshd_config(5)
+   Main PID: 649 (sshd)
+      Tasks: 1 (limit: 10668)
+     Memory: 9.3M (peak: 14.4M)
+        CPU: 1.112s
+     CGroup: /system.slice/sshd.service
+             └─649 "sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups"
+# /usr/lib/systemd/system/httpd.service
+# See httpd.service(8) for more information on using the httpd service.
+
+# Modifying this file in-place is not recommended, because changes
+# will be overwritten during package upgrades.  To customize the
+# behaviour, run "systemctl edit httpd" to create an override unit.
+
+# For example, to pass additional options (such as -D definitions) to
+# the httpd binary at startup, create an override unit (as is done by
+# systemctl edit) and enter the following:
+
+#	[Service]
+#	Environment=OPTIONS=-DMY_DEFINE
+
+[Unit]
+Description=The Apache HTTP Server
+Wants=httpd-init.service
+After=network.target remote-fs.target nss-lookup.target httpd-init.service
+Documentation=man:httpd.service(8)
+
+[Service]
+Type=notify
+Environment=LANG=C
+
+ExecStart=/usr/sbin/httpd $OPTIONS -DFOREGROUND
+ExecReload=/usr/sbin/httpd $OPTIONS -k graceful
+# Send SIGWINCH for graceful stop
+KillSignal=SIGWINCH
+KillMode=mixed
+PrivateTmp=true
+OOMPolicy=continue
+
+[Install]
+WantedBy=multi-user.target
+Done
+Starting KWASU service check...
+NAME="CentOS Stream"
+VERSION="9"
+ID="centos"
+ID_LIKE="rhel fedora"
+VERSION_ID="9"
+PLATFORM_ID="platform:el9"
+PRETTY_NAME="CentOS Stream 9"
+ANSI_COLOR="0;31"
+LOGO="fedora-logo-icon"
+CPE_NAME="cpe:/o:centos:centos:9"
+HOME_URL="https://centos.org/"
+BUG_REPORT_URL="https://issues.redhat.com/"
+REDHAT_SUPPORT_PRODUCT="Red Hat Enterprise Linux 9"
+REDHAT_SUPPORT_PRODUCT_VERSION="CentOS Stream"
+● httpd.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; preset: disabled)
+     Active: active (running) since Sat 2026-05-02 20:31:29 UTC; 540ms ago
+       Docs: man:httpd.service(8)
+   Main PID: 25132 (httpd)
+     Status: "Started, listening on: port 80"
+      Tasks: 177 (limit: 10668)
+     Memory: 13.5M (peak: 14.0M)
+        CPU: 103ms
+     CGroup: /system.slice/httpd.service
+             ├─25132 /usr/sbin/httpd -DFOREGROUND
+             ├─25133 /usr/sbin/httpd -DFOREGROUND
+             ├─25134 /usr/sbin/httpd -DFOREGROUND
+             ├─25135 /usr/sbin/httpd -DFOREGROUND
+             └─25136 /usr/sbin/httpd -DFOREGROUND
+active
+enabled
+● sshd.service - OpenSSH server daemon
+     Loaded: loaded (/usr/lib/systemd/system/sshd.service; enabled; preset: enabled)
+     Active: active (running) since Sat 2026-05-02 19:58:48 UTC; 32min ago
+       Docs: man:sshd(8)
+             man:sshd_config(5)
+   Main PID: 649 (sshd)
+      Tasks: 1 (limit: 10668)
+     Memory: 9.3M (peak: 14.4M)
+        CPU: 1.112s
+     CGroup: /system.slice/sshd.service
+             └─649 "sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups"
+# /usr/lib/systemd/system/httpd.service
+# See httpd.service(8) for more information on using the httpd service.
+
+# Modifying this file in-place is not recommended, because changes
+# will be overwritten during package upgrades.  To customize the
+# behaviour, run "systemctl edit httpd" to create an override unit.
+
+# For example, to pass additional options (such as -D definitions) to
+# the httpd binary at startup, create an override unit (as is done by
+# systemctl edit) and enter the following:
+
+#	[Service]
+#	Environment=OPTIONS=-DMY_DEFINE
+
+[Unit]
+Description=The Apache HTTP Server
+Wants=httpd-init.service
+After=network.target remote-fs.target nss-lookup.target httpd-init.service
+Documentation=man:httpd.service(8)
+
+[Service]
+Type=notify
+Environment=LANG=C
+
+ExecStart=/usr/sbin/httpd $OPTIONS -DFOREGROUND
+ExecReload=/usr/sbin/httpd $OPTIONS -k graceful
+# Send SIGWINCH for graceful stop
+KillSignal=SIGWINCH
+KillMode=mixed
+PrivateTmp=true
+OOMPolicy=continue
+
+[Install]
+WantedBy=multi-user.target
+Done
+Starting KWASU service check...
+NAME="CentOS Stream"
+VERSION="9"
+ID="centos"
+ID_LIKE="rhel fedora"
+VERSION_ID="9"
+PLATFORM_ID="platform:el9"
+PRETTY_NAME="CentOS Stream 9"
+ANSI_COLOR="0;31"
+LOGO="fedora-logo-icon"
+CPE_NAME="cpe:/o:centos:centos:9"
+HOME_URL="https://centos.org/"
+BUG_REPORT_URL="https://issues.redhat.com/"
+REDHAT_SUPPORT_PRODUCT="Red Hat Enterprise Linux 9"
+REDHAT_SUPPORT_PRODUCT_VERSION="CentOS Stream"
+● httpd.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; preset: disabled)
+     Active: active (running) since Sat 2026-05-02 20:31:32 UTC; 550ms ago
+       Docs: man:httpd.service(8)
+   Main PID: 25363 (httpd)
+     Status: "Started, listening on: port 80"
+      Tasks: 177 (limit: 10668)
+     Memory: 13.5M (peak: 13.8M)
+        CPU: 98ms
+     CGroup: /system.slice/httpd.service
+             ├─25363 /usr/sbin/httpd -DFOREGROUND
+             ├─25364 /usr/sbin/httpd -DFOREGROUND
+             ├─25365 /usr/sbin/httpd -DFOREGROUND
+             ├─25366 /usr/sbin/httpd -DFOREGROUND
+             └─25367 /usr/sbin/httpd -DFOREGROUND
+active
+enabled
+● sshd.service - OpenSSH server daemon
+     Loaded: loaded (/usr/lib/systemd/system/sshd.service; enabled; preset: enabled)
+     Active: active (running) since Sat 2026-05-02 19:58:48 UTC; 32min ago
+       Docs: man:sshd(8)
+             man:sshd_config(5)
+   Main PID: 649 (sshd)
+      Tasks: 1 (limit: 10668)
+     Memory: 9.3M (peak: 14.4M)
+        CPU: 1.112s
+     CGroup: /system.slice/sshd.service
+             └─649 "sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups"
+# /usr/lib/systemd/system/httpd.service
+# See httpd.service(8) for more information on using the httpd service.
+
+# Modifying this file in-place is not recommended, because changes
+# will be overwritten during package upgrades.  To customize the
+# behaviour, run "systemctl edit httpd" to create an override unit.
+
+# For example, to pass additional options (such as -D definitions) to
+# the httpd binary at startup, create an override unit (as is done by
+# systemctl edit) and enter the following:
+
+#	[Service]
+#	Environment=OPTIONS=-DMY_DEFINE
+
+[Unit]
+Description=The Apache HTTP Server
+Wants=httpd-init.service
+After=network.target remote-fs.target nss-lookup.target httpd-init.service
+Documentation=man:httpd.service(8)
+
+[Service]
+Type=notify
+Environment=LANG=C
+
+ExecStart=/usr/sbin/httpd $OPTIONS -DFOREGROUND
+ExecReload=/usr/sbin/httpd $OPTIONS -k graceful
+# Send SIGWINCH for graceful stop
+KillSignal=SIGWINCH
+KillMode=mixed
+PrivateTmp=true
+OOMPolicy=continue
+
+[Install]
+WantedBy=multi-user.target
+Done
+Starting KWASU service check...
+NAME="CentOS Stream"
+VERSION="9"
+ID="centos"
+ID_LIKE="rhel fedora"
+VERSION_ID="9"
+PLATFORM_ID="platform:el9"
+PRETTY_NAME="CentOS Stream 9"
+ANSI_COLOR="0;31"
+LOGO="fedora-logo-icon"
+CPE_NAME="cpe:/o:centos:centos:9"
+HOME_URL="https://centos.org/"
+BUG_REPORT_URL="https://issues.redhat.com/"
+REDHAT_SUPPORT_PRODUCT="Red Hat Enterprise Linux 9"
+REDHAT_SUPPORT_PRODUCT_VERSION="CentOS Stream"
+● httpd.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; preset: disabled)
+     Active: active (running) since Sat 2026-05-02 20:31:39 UTC; 583ms ago
+       Docs: man:httpd.service(8)
+   Main PID: 25594 (httpd)
+     Status: "Started, listening on: port 80"
+      Tasks: 177 (limit: 10668)
+     Memory: 13.5M (peak: 13.8M)
+        CPU: 98ms
+     CGroup: /system.slice/httpd.service
+             ├─25594 /usr/sbin/httpd -DFOREGROUND
+             ├─25595 /usr/sbin/httpd -DFOREGROUND
+             ├─25596 /usr/sbin/httpd -DFOREGROUND
+             ├─25598 /usr/sbin/httpd -DFOREGROUND
+             └─25667 /usr/sbin/httpd -DFOREGROUND
